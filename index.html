@@ -633,7 +633,7 @@
     switch (col.key) {
       case "model": {
         const sg = (typeof SLUG !== "undefined") ? SLUG[keyOf(r)] : null;
-        return sg ? `<a class="model" href="p/${sg}.html">${esc(r.model)}</a>`
+        return sg ? `<a class="model" href="p/${sg}">${esc(r.model)}</a>`
                   : `<span class="model">${esc(r.model)}</span>`;
       }
       case "brand": return `<span class="brand-badge">${esc(r.brand || "NSK")}</span>`;
@@ -1290,7 +1290,7 @@
         <span class="brand-badge">${esc(r.brand || 'NSK')}</span>
         <span class="type-badge type-${i}">${TYPE_CN[r.type] || r.type}</span>
         <span class="dp-sub">${esc(r.source === 'E1103' ? 'NSK metric catalogue E1103' : r.source === 'TRB' ? 'Timken TRB Catalog 2016' : r.source === 'HR1' ? 'FAG Schaeffler HR 1' : r.source === 'DIM' ? 'Timken Dimension Catalog' : 'NSK inch catalogue')} · units: ${state.unit === 'mm' ? 'mm' : 'inch'}</span>
-        ${(typeof SLUG !== 'undefined' && SLUG[keyOf(r)]) ? `<a class="btn-back" style="text-decoration:none" href="p/${SLUG[keyOf(r)]}.html">Standalone page (indexable) →</a>` : ''}
+        ${(typeof SLUG !== 'undefined' && SLUG[keyOf(r)]) ? `<a class="btn-back" style="text-decoration:none" href="p/${SLUG[keyOf(r)]}">Standalone page (indexable) →</a>` : ''}
         <a class="btn-send" style="text-decoration:none;padding:7px 16px;font-size:13px"
            href="#contact?model=${encodeURIComponent(r.model)}">Request a quote</a>
       </div>

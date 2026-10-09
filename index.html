@@ -1,0 +1,1698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIFT BEARING STORE CATALOG | NSK · Timken · FAG Bearing Specifications</title>
+<meta name="description" content="SIFT BEARING STORE CATALOG: 13,000+ bearing part numbers from NSK, Timken and FAG. Search by designation or by dimensions (bore × O.D. × width), find cross-brand interchanges, and get load ratings, limiting speeds, weights and original catalogue drawings.">
+<meta name="keywords" content="bearing catalog,bearing cross reference,bearing interchange,bearing dimensions,bearing specifications,NSK bearing,Timken bearing,FAG bearing,deep groove ball bearing,tapered roller bearing,spherical roller bearing,cylindrical roller bearing,SIFT bearing">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SIFT BEARING STORE CATALOG">
+<meta property="og:title" content="SIFT BEARING STORE CATALOG | NSK · Timken · FAG Bearing Specifications">
+<meta property="og:description" content="13,000+ bearing part numbers online: dimensions, load ratings, speeds, weights and original catalogue drawings, with cross-brand interchange search.">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root {
+    --primary: #0b4f9e;
+    --primary-dark: #083a75;
+    --bg: #f4f6fa;
+    --card: #ffffff;
+    --border: #e3e8f0;
+    --text: #1d2733;
+    --muted: #6b7a90;
+    --accent: #ff7a00;
+    --row-hover: #eef5ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+                 "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg); color: var(--text); font-size: 14px;
+  }
+  header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #fff; padding: 22px 28px 18px;
+  }
+  header h1 { font-size: 22px; font-weight: 700; letter-spacing: .5px; }
+  header h1 .tag {
+    display: inline-block; background: rgba(255,255,255,.18);
+    font-size: 12px; padding: 2px 8px; border-radius: 10px;
+    margin-left: 10px; vertical-align: middle; font-weight: 500;
+  }
+  header p { margin-top: 6px; font-size: 13px; opacity: .85; }
+  .wrap { max-width: 1280px; margin: 0 auto; padding: 18px 20px 40px; }
+
+  .panel {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px; margin-bottom: 14px;
+    box-shadow: 0 1px 3px rgba(20,40,80,.05);
+  }
+  .controls { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+  .search-box { position: relative; flex: 1 1 260px; min-width: 220px; }
+  .search-box input {
+    width: 100%; padding: 9px 12px 9px 34px; border: 1px solid var(--border);
+    border-radius: 8px; font-size: 14px; outline: none; background: #fbfcfe;
+  }
+  .search-box input:focus { border-color: var(--primary); background: #fff; }
+  .search-box::before {
+    content: "🔍"; position: absolute; left: 10px; top: 50%;
+    transform: translateY(-50%); font-size: 14px; opacity: .6;
+  }
+  .range { display: flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; }
+  .range input {
+    width: 76px; padding: 8px 8px; border: 1px solid var(--border);
+    border-radius: 8px; font-size: 13px; outline: none; text-align: center;
+  }
+  .range input:focus { border-color: var(--primary); }
+  .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+  .seg button {
+    border: 0; background: #fff; padding: 8px 14px; font-size: 13px;
+    cursor: pointer; color: var(--muted);
+  }
+  .seg button.on { background: var(--primary); color: #fff; font-weight: 600; }
+  .btn-reset {
+    border: 1px solid var(--border); background: #fff; color: var(--muted);
+    padding: 8px 14px; border-radius: 8px; cursor: pointer; font-size: 13px;
+  }
+  .btn-reset:hover { color: var(--accent); border-color: var(--accent); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .chip {
+    border: 1px solid var(--border); background: #fff; color: var(--text);
+    padding: 6px 14px; border-radius: 16px; cursor: pointer; font-size: 13px;
+    transition: all .15s; user-select: none;
+  }
+  .chip:hover { border-color: var(--primary); color: var(--primary); }
+  .chip.on { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 600; }
+  .chip .cnt { font-size: 11px; opacity: .7; margin-left: 4px; }
+
+  .statbar {
+    display: flex; justify-content: space-between; align-items: center;
+    margin: 4px 2px 10px; color: var(--muted); font-size: 13px;
+  }
+  .statbar b { color: var(--primary); font-size: 15px; }
+
+  .table-wrap {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; overflow: auto; box-shadow: 0 1px 3px rgba(20,40,80,.05);
+    max-height: 72vh;
+  }
+  table { border-collapse: collapse; width: 100%; min-width: 940px; }
+  thead th {
+    position: sticky; top: 0; z-index: 2; background: #f8fafc;
+    padding: 11px 12px; text-align: right; font-size: 12.5px;
+    color: #45536a; font-weight: 700; border-bottom: 2px solid var(--border);
+    cursor: pointer; white-space: nowrap; user-select: none;
+  }
+  thead th:first-child, thead th:nth-child(2) { text-align: left; }
+  thead th:hover { color: var(--primary); background: #eef3fa; }
+  thead th .arrow { font-size: 10px; margin-left: 3px; color: #b0bacb; }
+  thead th.sorted .arrow { color: var(--primary); }
+  tbody td {
+    padding: 9px 12px; text-align: right; border-bottom: 1px solid #f0f3f8;
+    font-variant-numeric: tabular-nums; white-space: nowrap;
+  }
+  tbody td:first-child, tbody td:nth-child(2) { text-align: left; }
+  tbody tr.data-row { cursor: pointer; }
+  tbody tr.data-row:hover { background: var(--row-hover); }
+  tbody tr.open { background: var(--row-hover); }
+  .brand-badge { display:inline-block; padding:2px 8px; border-radius:9px; font-size:11.5px;
+    font-weight:700; background:#eef7ee; color:#2f7a44; border:1px solid #cfe6d4; }
+  .model { font-weight: 700; color: var(--primary-dark); font-size: 13.5px; }
+  a.model { text-decoration: none; border-bottom: 1px dotted #9db4d6; }
+  a.model:hover { color: #1c3f75; border-bottom-color: #2c5fa8; }
+  .type-badge {
+    display: inline-block; font-size: 11.5px; padding: 2px 8px;
+    border-radius: 9px; background: #eef2f8; color: #4a5a72; font-weight: 600;
+  }
+  .type-0 { background: #e7f0fd; color: #1a5fb4; }
+  .type-1 { background: #e6f7ee; color: #187a4b; }
+  .type-2 { background: #fdf1e3; color: #b06a00; }
+  .type-3 { background: #f3e9fb; color: #7a3cb8; }
+  .type-4 { background: #fdeaea; color: #c0392b; }
+  .type-5 { background: #e4f7f9; color: #0e7490; }
+  .na { color: #b8c2d1; }
+
+  tr.detail-row td {
+    background: #f8fafc; text-align: left; padding: 14px 18px;
+    white-space: normal;
+  }
+  .detail-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 8px 22px;
+  }
+  .d-item { font-size: 13px; display: flex; justify-content: space-between; gap: 8px;
+            border-bottom: 1px dashed #e6ebf3; padding: 3px 0; }
+  .d-item .k { color: var(--muted); }
+  .d-item .v { font-weight: 600; color: var(--text); }
+  .detail-note {
+    margin-top: 10px; font-size: 12px; color: var(--muted);
+    background: #fff; border: 1px dashed var(--border); border-radius: 6px;
+    padding: 8px 10px;
+  }
+
+  .pager { display: flex; gap: 6px; justify-content: center; align-items: center;
+           margin-top: 16px; flex-wrap: wrap; }
+  .pager button {
+    border: 1px solid var(--border); background: #fff; border-radius: 7px;
+    padding: 7px 13px; cursor: pointer; font-size: 13px; color: var(--text);
+  }
+  .pager button:hover:not(:disabled) { border-color: var(--primary); color: var(--primary); }
+  .pager button.cur { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 700; }
+  .pager button:disabled { opacity: .4; cursor: default; }
+  .pager .info { color: var(--muted); font-size: 13px; margin: 0 8px; }
+
+  footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 26px; line-height: 1.8; }
+
+
+  /* ---------- pages ---------- */
+  #detailView, #aboutView, #contactView { display: none; }
+  body.detail #listView, body.page #listView { display: none; }
+  body.detail #detailView { display: block; }
+  body.page-about #aboutView { display: block; }
+  body.page-contact #contactView { display: block; }
+  /* top nav */
+  .topnav { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 9px; }
+  .topnav a {
+    color: #d7e5fa; text-decoration: none; font-size: 13px; font-weight: 600;
+    padding: 5px 13px; border-radius: 20px; border: 1px solid rgba(255,255,255,.3);
+  }
+  .topnav a:hover, .topnav a.on { background: rgba(255,255,255,.18); color: #fff; }
+  /* static pages */
+  .page-wrap { max-width: 900px; }
+  .page-wrap h2 { font-size: 20px; color: var(--primary-dark); margin: 0 0 12px; }
+  .page-wrap h3 { font-size: 14.5px; color: #45536a; margin: 18px 0 8px; }
+  .page-wrap p, .page-wrap li { font-size: 13.5px; color: #44536b; line-height: 1.85; }
+  .page-wrap ul { padding-left: 20px; margin: 6px 0; }
+  .stat-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 4px; }
+  .stat-row div { flex: 1 1 130px; background: #f7f9fc; border: 1px solid var(--border);
+    border-radius: 9px; padding: 11px 13px; }
+  .stat-row b { display: block; font-size: 21px; color: var(--primary-dark); }
+  .stat-row span { font-size: 12px; color: #7c8899; }
+  /* contact form */
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+  @media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+  .fld { display: flex; flex-direction: column; gap: 4px; }
+  .fld.full { grid-column: 1 / -1; }
+  .fld label { font-size: 12px; color: #6b7a8f; font-weight: 600; }
+  .fld input, .fld textarea, .fld select {
+    border: 1px solid var(--border); border-radius: 7px; padding: 8px 10px;
+    font-size: 13.5px; font-family: inherit; color: var(--text); background: #fff;
+  }
+  .fld input:focus, .fld textarea:focus { outline: none; border-color: var(--primary); }
+  .fld textarea { min-height: 96px; resize: vertical; }
+  .btn-send {
+    background: var(--primary); color: #fff; border: 0; border-radius: 8px;
+    padding: 10px 22px; font-size: 14px; font-weight: 700; cursor: pointer;
+  }
+  .btn-send:hover { background: var(--primary-dark); }
+  .btn-ghost {
+    background: #fff; color: var(--primary-dark); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 18px; font-size: 13.5px; font-weight: 600; cursor: pointer;
+  }
+  .btn-ghost:hover { border-color: var(--primary); background: #f2f7ff; }
+  .contact-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 10px; }
+  .contact-cards a { color: var(--primary-dark); text-decoration: none; font-weight: 700; font-size: 14px; }
+  .contact-cards a:hover { text-decoration: underline; }
+  .contact-cards .k { font-size: 11.5px; color: #8b97a8; display: block; margin-bottom: 3px; }
+  /* floating WhatsApp button */
+  .wa-float {
+    position: fixed; right: 20px; bottom: 20px; z-index: 999;
+    display: flex; align-items: center; gap: 9px; text-decoration: none;
+    background: #25d366; color: #fff; font-weight: 700; font-size: 13.5px;
+    padding: 11px 17px 11px 13px; border-radius: 28px;
+    box-shadow: 0 4px 16px rgba(37,211,102,.45);
+  }
+  .wa-float:hover { background: #1fb457; box-shadow: 0 6px 20px rgba(37,211,102,.55); }
+  .wa-float svg { width: 22px; height: 22px; fill: #fff; flex: none; }
+  @media (max-width: 560px) { .wa-float span { display: none; } .wa-float { padding: 13px; border-radius: 50%; } }
+  .dp-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+  .btn-back {
+    border: 1px solid var(--border); background: #fff; color: #45536a; cursor: pointer;
+    padding: 7px 14px; border-radius: 8px; font-size: 13px; font-weight: 600;
+  }
+  .btn-back:hover { background: #eef2f8; border-color: var(--primary); color: var(--primary-dark); }
+  .dp-title { font-size: 21px; font-weight: 700; color: var(--primary-dark); letter-spacing: .3px; }
+  .dp-sub { color: #7c8899; font-size: 12.5px; }
+  .dp-cols { display: grid; grid-template-columns: minmax(320px, 560px) 1fr; gap: 12px; align-items: start; }
+  @media (max-width: 980px) { .dp-cols { grid-template-columns: 1fr; } }
+  .card {
+    background: #fff; border: 1px solid var(--border); border-radius: 10px;
+    padding: 11px 13px; box-shadow: 0 1px 3px rgba(20,40,80,.05); margin-bottom: 11px;
+  }
+  .card h3 {
+    margin: 0 0 8px; font-size: 13px; color: #45536a; font-weight: 700;
+    padding-bottom: 6px; border-bottom: 1px solid var(--border);
+  }
+  /* key-spec strip */
+  .spec-strip { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 12px; }
+  .spec-strip div {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 6px 11px; min-width: 86px;
+  }
+  .spec-strip .k { display: block; font-size: 10.5px; color: #8b97a8; letter-spacing: .2px; }
+  .spec-strip .v { display: block; font-size: 15px; font-weight: 700; color: var(--primary-dark); }
+  .spec-strip .v small { font-size: 10.5px; font-weight: 600; color: #7c8899; margin-left: 2px; }
+  /* breadcrumb + extra detail blocks */
+  .dp-crumb { font-size: 12px; color: #8b97a8; margin-bottom: 7px; }
+  .dp-crumb a { color: var(--primary); text-decoration: none; }
+  .dp-crumb a:hover { text-decoration: underline; }
+  table.mini { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.mini th { text-align: left; font-weight: 600; color: #8b97a8; font-size: 11px;
+    padding: 4px 8px; border-bottom: 1px solid var(--border); }
+  table.mini td { padding: 5px 8px; border-bottom: 1px solid #f1f4f9; }
+  table.mini td.num { text-align: right; font-variant-numeric: tabular-nums; font-weight: 600; color: #22304a; }
+  table.mini td.sym { color: #6b7a8f; }
+  .calc { display: flex; flex-wrap: wrap; gap: 9px; align-items: flex-end; }
+  .calc .fld { flex: 1 1 120px; }
+  .calc .fld label { font-size: 11.5px; color: #7c8899; font-weight: 600; }
+  .calc .fld input {
+    width: 100%; border: 1px solid var(--border); border-radius: 7px;
+    padding: 6px 9px; font-size: 13px; font-family: inherit;
+  }
+  .calc .fld input:focus { outline: none; border-color: var(--primary); }
+  .calc-out {
+    margin-top: 10px; background: #f3f7fd; border-left: 3px solid var(--primary);
+    border-radius: 0 8px 8px 0; padding: 9px 13px; font-size: 13px; color: #33425c;
+  }
+  .calc-out b { color: var(--primary-dark); font-size: 15px; }
+  .tagline { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+  .tagline span {
+    font-size: 11.5px; background: #eef3fa; color: #45536a;
+    border: 1px solid var(--border); border-radius: 12px; padding: 3px 9px;
+  }
+  /* related products */
+  .rel-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 9px; }
+  .rel-tab {
+    font-size: 12px; padding: 4px 11px; border-radius: 13px; cursor: pointer;
+    border: 1px solid var(--border); background: #fff; color: #5a6b84;
+  }
+  .rel-tab.on { background: var(--primary); border-color: var(--primary); color: #fff; font-weight: 600; }
+  .rel-tab .n { opacity: .7; margin-left: 4px; font-size: 11px; }
+  table.rel { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  table.rel th {
+    text-align: left; font-weight: 600; color: #8b97a8; font-size: 11px;
+    padding: 4px 8px; border-bottom: 1px solid var(--border); white-space: nowrap;
+  }
+  table.rel td { padding: 5px 8px; border-bottom: 1px solid #f1f4f9; white-space: nowrap; }
+  table.rel tr:hover td { background: #f5f9ff; }
+  table.rel a { color: var(--primary-dark); font-weight: 600; text-decoration: none; }
+  table.rel a:hover { text-decoration: underline; }
+  table.rel .num { text-align: right; font-variant-numeric: tabular-nums; color: #44536b; }
+  .rel-empty { color: #98a5b8; font-size: 12.5px; padding: 8px 2px; }
+  .catfig { width: 100%; max-width: 760px; margin: 0 auto; height: auto; display: block; background: #fff; border-radius: 6px; }
+  .drawing { width: 100%; height: auto; display: block; background: #fbfcfe; border-radius: 8px; }
+  .draw-cap { margin-top: 7px; font-size: 11.5px; color: #8b97a8; line-height: 1.7; }
+  .kv { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 4px 8px; }
+  .kv div { display: flex; justify-content: space-between; gap: 8px; font-size: 12.5px;
+            padding: 4px 8px; background: #f7f9fc; border-radius: 5px; }
+  .kv .k { color: #7c8899; }
+  .kv .v { font-weight: 600; color: var(--text); }
+  .nodraw { padding: 40px; text-align: center; color: #98a5b8; font-size: 13px; }
+  .dp-note { font-size: 12px; color: #6b7a8f; line-height: 1.7; background: #f3f7fd;
+             border-left: 3px solid var(--primary); padding: 10px 14px; border-radius: 0 8px 8px 0; }
+
+  .dimbox { flex: 1 1 320px; }
+  .dimrow {
+    display: flex; align-items: center; flex-wrap: wrap; gap: 8px 14px;
+    margin: 10px 0 2px; padding: 9px 11px; background: #f7f9fc;
+    border: 1px solid var(--border); border-radius: 9px; font-size: 12.5px; color: #5a6b84;
+  }
+  .dimlab { font-weight: 700; color: #45536a; }
+  .dimgrp { display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; }
+  .dimgrp input {
+    width: 68px; padding: 4px 7px; border: 1px solid var(--border);
+    border-radius: 6px; font-size: 12.5px; font-family: inherit;
+  }
+  .dimgrp input:focus { outline: none; border-color: var(--primary); }
+  .dimhint { color: var(--primary-dark); font-weight: 600; }
+  @media (max-width: 720px) {
+    header h1 { font-size: 18px; }
+    .wrap { padding: 12px 10px 30px; }
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>SIFT BEARING STORE CATALOG<span class="tag" id="hdrtag">loading…</span></h1>
+  <p>Search by designation or dimensions, filter by brand and type, sort any column · click a row for <b>full specifications, original catalogue drawings and interchange options</b></p>
+  <nav class="topnav">
+    <a href="#" id="navHome">Catalog Search</a>
+    <a href="#about" id="navAbout">About Us</a>
+    <a href="#contact" id="navContact">Contact / RFQ</a>
+  </nav>
+</header>
+
+<div class="wrap">
+<div id="listView">
+  <div class="panel">
+    <div class="controls">
+      <div class="search-box">
+          <input id="q" type="text" placeholder="Search part number, e.g. 6205, HR32310J, LM603049/LM603012, HM218248/HM218210…" autocomplete="off">
+      </div>
+      <div class="search-box dimbox">
+        <input id="dims" type="text" placeholder="Dimension search: bore × O.D. × width, e.g. 25x52x15, 25*52, or 25x52x15 ±1" autocomplete="off">
+      </div>
+      <div class="seg" id="unitSeg">
+        <button data-u="mm" class="on">Metric mm</button>
+        <button data-u="inch">Inch</button>
+      </div>
+      <button class="btn-reset" id="reset">Reset filters</button>
+    </div>
+    <div class="dimrow">
+      <span class="dimlab">Dimension range (mm)</span>
+      <span class="dimgrp">Bore d <input id="dmin" type="number" min="0" placeholder="min"> – <input id="dmax" type="number" min="0" placeholder="max"></span>
+      <span class="dimgrp">O.D. D <input id="Dmin" type="number" min="0" placeholder="min"> – <input id="Dmax" type="number" min="0" placeholder="max"></span>
+      <span class="dimgrp">Width B/T <input id="Bmin" type="number" min="0" placeholder="min"> – <input id="Bmax" type="number" min="0" placeholder="max"></span>
+      <span class="dimhint" id="dimhint"></span>
+    </div>
+    <div class="chips" id="brands"></div>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div class="statbar">
+    <div><b id="cnt">0</b> results <span id="cond"></span></div>
+    <div id="sortinfo"></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr id="headRow"></tr>
+      </thead>
+      <tbody id="tbody"></tbody>
+    </table>
+  </div>
+
+  <div class="pager" id="pager"></div>
+
+  <footer>
+    <a href="#about" style="color:var(--primary-dark);font-weight:600">About Us</a> ·
+    <a href="#contact" style="color:var(--primary-dark);font-weight:600">Contact / RFQ</a> ·
+    Email <a href="mailto:richard@bearingsfit.com" style="color:var(--primary-dark)">richard@bearingsfit.com</a> ·
+    WhatsApp <a href="https://wa.me/8615621496516" style="color:var(--primary-dark)">+86 156 2149 6516</a><br>
+    Sources: NSK inch catalogue + NSK metric catalogue CAT. No. E1103 + Timken Bearing Dimension Catalog +
+    Timken Tapered Roller Bearing Catalog (2016) + FAG / Schaeffler Rolling Bearings HR 1.<br>
+    Weights are given in kg; the table shows load ratings in lbs (original N values are kept on the detail page) and speeds in rpm.
+    Where a catalogue does not publish ratings or speeds, those cells stay empty. Cylindrical roller entries from the NSK inch
+    catalogue are series numbers (e.g. 2210 covers NU2210 / NJ2210 of the same size).
+  </footer>
+</div>
+
+<div id="detailView"></div>
+
+<div id="aboutView" class="page-wrap">
+  <div class="dp-top"><button class="btn-back" onclick="location.hash=''">← Back to catalog</button></div>
+  <h2>About Us</h2>
+  <div class="card">
+    <p><b>SIFT Bearing Store</b> supplies imported rolling bearings and provides selection support. We digitised the
+    <b>original manufacturer catalogues</b> of NSK, Timken and FAG (Schaeffler) into this searchable database so that
+    engineers and buyers can <b>check specifications, find interchanges and compare options</b> in seconds.</p>
+    <div class="stat-row" id="aboutStats"></div>
+  </div>
+  <div class="card">
+    <h3>Where the data comes from</h3>
+    <p>Every record is <b>parsed line by line from the manufacturers' published catalogue PDFs</b>, and each one keeps the
+    catalogue page number so any value can be traced back to the source:</p>
+    <ul>
+      <li><b>NSK</b> — inch product catalogue and the metric catalogue CAT. No. E1103</li>
+      <li><b>Timken</b> — Tapered Roller Bearing Catalog (2016) and Bearing Dimension Catalog</li>
+      <li><b>FAG / Schaeffler</b> — Rolling Bearings catalogue HR 1</li>
+    </ul>
+    <p>The parsed data was cross-checked between catalogues: for part numbers that appear in more than one source the bore
+    diameters agree to within 0.001 mm, and over 95% of the weights match within ±15% (the remainder comes from
+    pound/kilogram rounding in the original tables). Weights are normalised to <b>kg</b>; load ratings keep both the original
+    <b>N</b> and <b>lbs</b> values.</p>
+  </div>
+  <div class="card">
+    <h3>What we offer</h3>
+    <ul>
+      <li><b>Selection &amp; interchange</b> — find equivalent part numbers across brands by bore × O.D. × width</li>
+      <li><b>Stock &amp; sourcing</b> — common sizes held in stock, special designations quoted on request</li>
+      <li><b>Technical support</b> — fits and tolerances, internal clearance, lubrication and mounting advice</li>
+      <li><b>Bulk quotations</b> — send us a part-number list and we will quote the whole package</li>
+    </ul>
+    <p style="margin-top:10px">For a quotation or technical help, use the
+    <a href="#contact" style="color:var(--primary-dark);font-weight:700">Contact / RFQ</a> page, or email
+    <a href="mailto:richard@bearingsfit.com" style="color:var(--primary-dark);font-weight:700">richard@bearingsfit.com</a>.</p>
+  </div>
+  <div class="card">
+    <h3>Disclaimer</h3>
+    <p style="font-size:12.5px;color:#6b7a8f">The data on this site is taken from publicly available manufacturer catalogues and is
+    provided for selection reference only. All trademarks and part numbers belong to their respective owners; this site is not
+    affiliated with any bearing manufacturer. Always confirm against the latest official catalogue and with your supplier before
+    ordering. The scale cross-section drawings generated on this site are schematic and must not be used for manufacturing or assembly.</p>
+  </div>
+</div>
+
+<div id="contactView" class="page-wrap">
+  <div class="dp-top"><button class="btn-back" onclick="location.hash=''">← Back to catalog</button></div>
+  <h2>Contact / Request a Quote</h2>
+  <div class="card">
+    <div class="contact-cards">
+      <div><span class="k">Email</span><a href="mailto:richard@bearingsfit.com">richard@bearingsfit.com</a></div>
+      <div><span class="k">WhatsApp / Mobile</span><a href="https://wa.me/8615621496516" target="_blank" rel="noopener">+86 156 2149 6516</a></div>
+      <div><span class="k">Contact person</span><span style="font-weight:700;color:#22304a;font-size:14px">Richard</span></div>
+      <div><span class="k">Response time</span><span style="font-weight:700;color:#22304a;font-size:14px">Within 24 hours, business days</span></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>Online enquiry</h3>
+    <p style="margin:0 0 12px;font-size:12.5px;color:#7c8899">Fill in the form and press <b>Send enquiry</b> — it is submitted
+      directly, no mail client needed, and we reply to your email within 24 hours. You can also press <b>Copy details</b> and
+      paste the text into WhatsApp or WeChat.</p>
+    <form id="inquiryForm" class="form-grid" onsubmit="return false">
+      <div class="fld"><label>Name *</label><input id="f_name" required placeholder="How should we address you?"></div>
+      <div class="fld"><label>Company</label><input id="f_comp" placeholder="Company name"></div>
+      <div class="fld"><label>Email *</label><input id="f_mail" type="email" required placeholder="Where we send the quotation"></div>
+      <div class="fld"><label>Phone / WhatsApp</label><input id="f_tel" placeholder="For faster contact"></div>
+      <div class="fld full"><label>Part numbers required *</label><input id="f_model" required placeholder="e.g. 6205-2RSR, 22218CAME4, LM603049/LM603012 — separate several with commas or line breaks"></div>
+      <div class="fld"><label>Quantity</label><input id="f_qty" placeholder="e.g. 100 pcs"></div>
+      <div class="fld"><label>Required delivery</label><input id="f_lead" placeholder="e.g. within two weeks"></div>
+      <div class="fld full"><label>Notes / other requirements</label><textarea id="f_msg" placeholder="Internal clearance, precision class, brand preference, operating conditions…"></textarea></div>
+      <input type="checkbox" name="botcheck" id="f_bot" style="display:none" tabindex="-1" autocomplete="off">
+      <div class="fld full" style="flex-direction:row;gap:10px;align-items:center;flex-wrap:wrap">
+        <button type="button" class="btn-send" id="btnSend">Send enquiry</button>
+        <button type="button" class="btn-ghost" id="btnCopy">Copy details</button>
+        <a class="btn-ghost" style="text-decoration:none" href="https://wa.me/8615621496516" target="_blank" rel="noopener">Chat on WhatsApp</a>
+        <span id="formMsg" style="font-size:12.5px;color:#2f7a44;font-weight:600"></span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  const TYPES = [
+    ["Ball", "Ball"],
+    ["Cylindrical", "Cylindrical Roller"],
+    ["Spherical", "Spherical Roller"],
+    ["Tapered", "Tapered Roller"],
+    ["Thrust", "Thrust"],
+    ["Precision", "Precision / Angular"],
+  ];
+  const TYPE_CN = Object.fromEntries(TYPES);
+
+  // detail-field labels
+  const LBL = {
+    model: "Designation", type: "Type", brand: "Brand",
+    d_mm: "Bore d (mm)", d_inch: "Bore d (in)",
+    D_mm: "Outside dia. D (mm)", D_inch: "Outside dia. D (in)",
+    B_mm: "Width B (mm)", B_inch: "Width B (in)",
+    T_mm: "Overall width T (mm)", T_inch: "Overall width T (in)",
+    C_mm: "Cup width C (mm)", C_inch: "Cup width C (in)",
+    H_mm: "Height H (mm)", H_inch: "Height H (in)",
+    r: "Chamfer r (in)", r_inch: "Chamfer r (in)", r1_inch: "Chamfer r1 (in)",
+    Cr: "Basic dynamic load rating Cr (lbs)", Cor: "Basic static load rating Cor (lbs)",
+    Ca: "Basic dynamic axial rating Ca (lbs)", Coa: "Basic static axial rating Coa (lbs)",
+    grease_rpm: "Limiting speed · grease (rpm)", oil_rpm: "Limiting speed · oil (rpm)",
+    weight_kg: "Weight (kg)", cone_weight_kg: "Cone weight (kg)", cup_weight_kg: "Cup weight (kg)",
+    total_weight_kg: "Total weight (kg)",
+    preload_lb: "Preload (lbs)",
+    Factor: "Factor f0", a_inch: "Effective centre a (in)",
+    cup: "Mating cup", cone: "Cone (inner ring)",
+    Cr_N: "Basic dynamic load rating Cr (N)", Cor_N: "Basic static load rating C0r (N)",
+    Cur_N: "Fatigue limit load Cur (N)", nG_rpm: "Limiting speed nG (rpm)", nB_rpm: "Reference speed nB (rpm)",
+    D1_mm: "Inner-ring shoulder dia. D1 (mm)", D2_mm: "Seal outside dia. D2 (mm)", d1_mm: "Inner-ring OD d1 (mm)",
+    ra_mm: "Housing fillet ra max (mm)",
+    C1_N: "Dynamic rating C1 (N, ISO)", C1_lbf: "Dynamic rating C1 (lbf, ISO)",
+    C90_N: "Radial rating C90 (N)", Ca90_N: "Thrust rating Ca90 (N)",
+    C90_lbf: "Radial rating C90 (lbf)", Ca90_lbf: "Thrust rating Ca90 (lbf)",
+    C0_N: "Static rating C0 (N)", C0_lbf: "Static rating C0 (lbf)",
+    K: "Factor K", e: "Factor e", Y: "Factor Y", Y1: "Factor Y1", Y2: "Factor Y2", Y0: "Factor Y0",
+    G1: "Geometry factor G1", G2: "Geometry factor G2", Cg: "Geometry factor Cg",
+    f0: "Factor f0", alpha_deg: "Contact angle (°)",
+    a_mm: "Effective load centre a (mm)", R_mm: "Shaft fillet R max (mm)", r_mm: "Housing fillet r max (mm)",
+    da_mm: "Shaft shoulder da (mm)", db_mm: "Shaft shoulder db (mm)",
+    Da_mm: "Housing shoulder Da (mm)", Db_mm: "Housing shoulder Db (mm)",
+    Dc_mm: "Housing shoulder Dc (mm)", dc_mm: "Shaft shoulder dc (mm)",
+    ra1_mm: "Housing fillet ra1 max (mm)", rb_mm: "Fillet rb max (mm)",
+    Aa_mm: "Cage projection Aa (mm)", Ab_mm: "Cage projection Ab (mm)",
+    Ka_mm: "Pin dimension Ka (mm)", Kb_mm: "Pin dimension Kb (mm)",
+    E_mm: "Dimension E (mm)", F_mm: "Dimension F (mm)", s_mm: "Dimension s (mm)",
+    r1_mm: "Chamfer r1 min (mm)", r2_mm: "Chamfer r2 min (mm)",
+    d2_mm: "Dimension d2 (mm)", d3_mm: "Dimension d3 (mm)", D3_mm: "Dimension D3 (mm)",
+    Ca_N: "Basic dynamic axial rating Ca (N)", Coa_N: "Basic static axial rating C0a (N)",
+    source: "Source catalogue", trb_type: "Bearing series type",
+    page_cone: "Catalogue page (cone)", page_cup: "Catalogue page (cup)",
+    page_dim_cat: "Dimension-catalogue page",
+    da_min: "Shaft shoulder da min (in)", da_max: "Shaft shoulder da max (in)",
+    Da_max: "Housing shoulder Da max (in)", Da_min: "Housing shoulder Da min (in)",
+    Db_inch: "Housing shoulder Db (in)", Dbmax_inch: "Housing shoulder Db max (in)",
+    db_min: "Shaft shoulder db min (in)", db_max: "Shaft shoulder db max (in)",
+    Db_min: "Housing shoulder Db min (in)", Db_max: "Housing shoulder Db max (in)",
+    ra_max: "Fillet ra max (in)", rb_max: "Fillet rb max (in)",
+    ra_inch: "Fillet ra (in)", rb_inch: "Fillet rb (in)",
+    Shaft_inch: "Shaft shoulder (in)", Housing_inch: "Housing shoulder (in)",
+    da_inch: "Shaft shoulder da (in)", Da_inch: "Housing shoulder Da (in)",
+    d1_inch: "Bore d1 (in)", D1_inch: "Outside dia. D1 (in)",
+    page_dims: "Catalogue page (dimensions)", page_rate: "Catalogue page (ratings)",
+  };
+
+  const state = {
+    q: "", type: null, brand: null, dmin: null, dmax: null,
+    Dmin: null, Dmax: null, Bmin: null, Bmax: null, dimq: "",
+    unit: "mm", sortKey: null, sortDir: 1, page: 1, pageSize: 50, openId: -1,
+  };
+
+  // ---------- helpers ----------
+  function num(v) {
+    if (v === undefined || v === null || v === "") return null;
+    const n = parseFloat(v);
+    return isNaN(n) ? null : n;
+  }
+  function dimMM(r, base) {
+    const mm = num(r[base + "_mm"]);
+    if (mm !== null) return mm;
+    const inch = num(r[base + "_inch"]);
+    return inch !== null ? inch * 25.4 : null;
+  }
+  function dimIN(r, base) {
+    const inch = num(r[base + "_inch"]);
+    if (inch !== null) return inch;
+    const mm = num(r[base + "_mm"]);
+    return mm !== null ? mm / 25.4 : null;
+  }
+  function load(r, k) { return num(r[k]); } // Cr or Ca
+  function weight(r) {
+    if (num(r.weight_kg) !== null) return num(r.weight_kg);
+    if (num(r.total_weight_kg) !== null) return num(r.total_weight_kg);
+    const c = num(r.cone_weight_kg), p = num(r.cup_weight_kg);
+    if (c !== null || p !== null) return (c ?? 0) + (p ?? 0);
+    return null;
+  }
+  function fmt(n, digits) {
+    if (n === null) return null;
+    if (Number.isInteger(n) && Math.abs(n) >= 1000) return n.toLocaleString("en-US");
+    let s = n.toFixed(digits);
+    if (s === "0.00" || s === "0.0") s = n.toFixed(3);
+    return s.replace(/\.?0+$/, m => m.includes(".") ? "" : m);
+  }
+  function fmtCell(n, digits) {
+    const s = fmt(n, digits);
+    return s === null ? '<span class="na">—</span>' : s;
+  }
+
+  // ---------- columns ----------
+  const COLS = [
+    { key: "model",   label: "Designation", type: "s" },
+    { key: "brand",   label: "Brand",       type: "s" },
+    { key: "type",    label: "Type",        type: "t" },
+    { key: "d",       label: "Bore d",      type: "n", dg: 4 },
+    { key: "D",       label: "O.D. D",      type: "n", dg: 4 },
+    { key: "B",       label: "Width B/T",   type: "n", dg: 4 },
+    { key: "Cr",      label: "Dynamic Cr/Ca (lbs)", type: "n", dg: 0 },
+    { key: "Cor",     label: "Static Cor/Coa (lbs)", type: "n", dg: 0 },
+    { key: "grease_rpm", label: "Speed · grease / limiting (rpm)", type: "n", dg: 0 },
+    { key: "oil_rpm", label: "Speed · oil / reference (rpm)", type: "n", dg: 0 },
+    { key: "w",       label: "Weight (kg)", type: "n", dg: 3 },
+  ];
+
+  function sortVal(r, key) {
+    switch (key) {
+      case "model": return r.model.toLowerCase();
+      case "brand": return (r.brand || "NSK");
+      case "type": return TYPES.findIndex(t => t[0] === r.type);
+      case "d": return dimMM(r, "d") ?? dimIN(r, "d");
+      case "D": return dimMM(r, "D") ?? dimIN(r, "D");
+      case "B": return dimMM(r, "B") ?? dimIN(r, "B");
+      case "Cr": return num(r.Cr) ?? num(r.Ca);
+      case "Cor": return num(r.Cor) ?? num(r.Coa);
+      case "w": return weight(r);
+      case "grease_rpm": return num(r.grease_rpm) ?? num(r.nG_rpm);
+      case "oil_rpm": return num(r.oil_rpm) ?? num(r.nB_rpm);
+      default: return num(r[key]);
+    }
+  }
+  function cellVal(r, col) {
+    const u = state.unit;
+    switch (col.key) {
+      case "model": {
+        const sg = (typeof SLUG !== "undefined") ? SLUG[keyOf(r)] : null;
+        return sg ? `<a class="model" href="p/${sg}.html">${esc(r.model)}</a>`
+                  : `<span class="model">${esc(r.model)}</span>`;
+      }
+      case "brand": return `<span class="brand-badge">${esc(r.brand || "NSK")}</span>`;
+      case "type": {
+        const i = TYPES.findIndex(t => t[0] === r.type);
+        return `<span class="type-badge type-${i}">${TYPE_CN[r.type] || r.type}</span>`;
+      }
+      case "d": return fmtCell(u === "mm" ? dimMM(r, "d") : dimIN(r, "d"), u === "mm" ? 2 : 4);
+      case "D": return fmtCell(u === "mm" ? dimMM(r, "D") : dimIN(r, "D"), u === "mm" ? 2 : 4);
+      case "B": return fmtCell(u === "mm" ? dimMM(r, "B") : dimIN(r, "B"), u === "mm" ? 2 : 4);
+      case "Cr": return fmtCell(num(r.Cr) ?? num(r.Ca), 0);
+      case "Cor": return fmtCell(num(r.Cor) ?? num(r.Coa), 0);
+      case "grease_rpm": return fmtCell(num(r.grease_rpm) ?? num(r.nG_rpm), 0);
+      case "oil_rpm": return fmtCell(num(r.oil_rpm) ?? num(r.nB_rpm), 0);
+      case "w": return fmtCell(weight(r), 3);
+    }
+    return "";
+  }
+  function esc(s) {
+    return String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  }
+
+  // ---------- filtering ----------
+  function filtered() {
+    const q = state.q.trim().toUpperCase();
+    const dmin = state.dmin, dmax = state.dmax;
+    return BEARINGS.filter(r => {
+      if (state.type && r.type !== state.type) return false;
+      if (state.brand && (r.brand || "NSK") !== state.brand) return false;
+      if (q && r.model.toUpperCase().indexOf(q) === -1) return false;
+      if (dmin !== null || dmax !== null) {
+        const d = dimMM(r, "d");
+        if (d === null) return false;
+        if (dmin !== null && d < dmin) return false;
+        if (dmax !== null && d > dmax) return false;
+      }
+      if (state.Dmin !== null || state.Dmax !== null) {
+        const D = dimMM(r, "D");
+        if (D === null) return false;
+        if (state.Dmin !== null && D < state.Dmin) return false;
+        if (state.Dmax !== null && D > state.Dmax) return false;
+      }
+      if (state.Bmin !== null || state.Bmax !== null) {
+        const B = axialDim(r).w;
+        if (B === null) return false;
+        if (state.Bmin !== null && B < state.Bmin) return false;
+        if (state.Bmax !== null && B > state.Bmax) return false;
+      }
+      return true;
+    });
+  }
+  function sorted(list) {
+    if (!state.sortKey) return list;
+    const col = COLS.find(c => c.key === state.sortKey);
+    const dir = state.sortDir;
+    return list.slice().sort((a, b) => {
+      const va = sortVal(a, state.sortKey), vb = sortVal(b, state.sortKey);
+      if (va === null && vb === null) return 0;
+      if (va === null) return 1;
+      if (vb === null) return -1;
+      if (typeof va === "string") return va.localeCompare(vb) * dir;
+      return (va - vb) * dir;
+    });
+  }
+
+  // ---------- rendering ----------
+  function renderHead() {
+    const tr = document.getElementById("headRow");
+    tr.innerHTML = COLS.map(c => {
+      const on = state.sortKey === c.key;
+      const arrow = on ? (state.sortDir === 1 ? "▲" : "▼") : "⇅";
+      return `<th data-k="${c.key}" class="${on ? "sorted" : ""}">${c.label}<span class="arrow">${arrow}</span></th>`;
+    }).join("");
+    tr.querySelectorAll("th").forEach(th => {
+      th.onclick = () => {
+        const k = th.dataset.k;
+        if (state.sortKey === k) state.sortDir *= -1;
+        else { state.sortKey = k; state.sortDir = 1; }
+        state.page = 1; state.openId = -1;
+        render();
+      };
+    });
+  }
+
+  const BRANDS = ["NSK", "Timken", "FAG"];
+  function renderBrands() {
+    const box = document.getElementById("brands");
+    if (!box) return;
+    const c = {};
+    BEARINGS.forEach(r => { const b = r.brand || "NSK"; c[b] = (c[b] || 0) + 1; });
+    let html = `<span class="chip ${state.brand === null ? "on" : ""}" data-b="">All brands<span class="cnt">${BEARINGS.length}</span></span>`;
+    html += BRANDS.map(b => `<span class="chip ${state.brand === b ? "on" : ""}" data-b="${b}">${b}<span class="cnt">${c[b] || 0}</span></span>`).join("");
+    box.innerHTML = html;
+    box.querySelectorAll(".chip").forEach(ch => {
+      ch.onclick = () => {
+        const b = ch.dataset.b;
+        state.brand = b === "" ? null : (state.brand === b ? null : b);
+        state.page = 1; state.openId = -1;
+        render();
+      };
+    });
+  }
+
+  function renderChips() {
+    const box = document.getElementById("chips");
+    const pool = state.brand ? BEARINGS.filter(r => (r.brand || "NSK") === state.brand) : BEARINGS;
+    const counts = {};
+    pool.forEach(r => counts[r.type] = (counts[r.type] || 0) + 1);
+    let html = `<span class="chip ${state.type === null ? "on" : ""}" data-t="">All<span class="cnt">${pool.length}</span></span>`;
+    html += TYPES.map(([k, cn]) =>
+      `<span class="chip ${state.type === k ? "on" : ""}" data-t="${k}">${cn}<span class="cnt">${counts[k] || 0}</span></span>`
+    ).join("");
+    box.innerHTML = html;
+    box.querySelectorAll(".chip").forEach(ch => {
+      ch.onclick = () => {
+        const t = ch.dataset.t;
+        state.type = t === "" ? null : (state.type === t ? null : t);
+        state.page = 1; state.openId = -1;
+        render();
+      };
+    });
+  }
+
+  function detailHTML(r) {
+    const skip = new Set(["model", "type"]);
+    let items = `<div class="d-item"><span class="k">Designation</span><span class="v">${esc(r.model)}</span></div>`;
+    items += `<div class="d-item"><span class="k">Type</span><span class="v">${TYPE_CN[r.type] || r.type}</span></div>`;
+    Object.keys(LBL).forEach(k => {
+      if (skip.has(k)) return;
+      let v = r[k];
+      if (v === undefined) return;
+      let disp = v;
+      if (k.endsWith("_rpm")) disp = Number(v).toLocaleString("en-US");
+      items += `<div class="d-item"><span class="k">${LBL[k]}</span><span class="v">${esc(disp)}</span></div>`;
+    });
+    let note = "";
+    if (r.type === "Cylindrical")
+      note = "Cylindrical roller entries are catalogue series numbers covering the N / NU / NJ / NUP / NH prefixes of the same size.";
+    if (r.type === "Tapered" && r.cup)
+      note = "Inch tapered roller bearings are cone / cup assemblies; cone and cup weights are listed separately and the total is their sum. Weights were converted from catalogue pounds to kg.";
+    if (r.type === "Thrust")
+      note = "Thrust bearing ratings are axial values Ca / Coa.";
+    if (r.page_dims || r.page_rate)
+      note += (note ? " " : "") + `Source: catalogue page ${r.page_dims || "?"} (dimensions) / page ${r.page_rate || "?"} (ratings).`;
+    return `<div class="detail-grid">${items}</div>${note ? `<div class="detail-note">${note}</div>` : ""}`;
+  }
+
+  function renderTable(list) {
+    const totalPages = Math.max(1, Math.ceil(list.length / state.pageSize));
+    if (state.page > totalPages) state.page = totalPages;
+    const start = (state.page - 1) * state.pageSize;
+    const rows = list.slice(start, start + state.pageSize);
+    const tb = document.getElementById("tbody");
+    let html = "";
+    rows.forEach((r, i) => {
+      const id = start + i;
+      const open = state.openId === id;
+      html += `<tr class="data-row ${open ? "open" : ""}" data-id="${id}">` +
+        COLS.map(c => `<td>${cellVal(r, c)}</td>`).join("") + "</tr>";
+      if (open) html += `<tr class="detail-row"><td colspan="${COLS.length}">${detailHTML(r)}</td></tr>`;
+    });
+    if (!rows.length)
+      html = `<tr><td colspan="${COLS.length}" style="text-align:center;padding:36px;color:#98a5b8">No bearings match the current filters — try widening your search</td></tr>`;
+    tb.innerHTML = html;
+    tb.querySelectorAll("tr.data-row").forEach(tr => {
+      tr.onclick = (ev) => {
+        if (ev.target.closest("a")) return;   // let the model link open the standalone page
+        openDetail(rows[+tr.dataset.id - start]);
+      };
+    });
+    renderPager(list.length, totalPages, start, rows.length);
+  }
+
+  function renderPager(total, totalPages, start, shown) {
+    const el = document.getElementById("pager");
+    if (total === 0) { el.innerHTML = ""; return; }
+    const p = state.page;
+    let btns = [];
+    btns.push(`<button ${p === 1 ? "disabled" : ""} data-p="${p - 1}">Prev</button>`);
+    const pages = [];
+    for (let i = 1; i <= totalPages; i++) {
+      if (i === 1 || i === totalPages || Math.abs(i - p) <= 2) pages.push(i);
+      else if (pages[pages.length - 1] !== "…") pages.push("…");
+    }
+    pages.forEach(i => {
+      if (i === "…") btns.push(`<span class="info">…</span>`);
+      else btns.push(`<button class="${i === p ? "cur" : ""}" data-p="${i}">${i}</button>`);
+    });
+    btns.push(`<button ${p === totalPages ? "disabled" : ""} data-p="${p + 1}">Next</button>`);
+    btns.push(`<span class="info">${start + 1}–${start + shown} / ${total}</span>`);
+    el.innerHTML = btns.join("");
+    el.querySelectorAll("button[data-p]").forEach(b => {
+      b.onclick = () => {
+        const np = +b.dataset.p;
+        if (np >= 1 && np <= totalPages) { state.page = np; state.openId = -1; render(); }
+      };
+    });
+  }
+
+  function render() {
+    renderHead();
+    renderBrands();
+    renderChips();
+    const list = sorted(filtered());
+    document.getElementById("cnt").textContent = list.length.toLocaleString("en-US");
+    const conds = [];
+    if (state.q) conds.push(`designation contains “${state.q}”`);
+    if (state.brand) conds.push(`brand: ${state.brand}`);
+    if (state.type) conds.push(`type: ${TYPE_CN[state.type]}`);
+    if (state.dmin !== null || state.dmax !== null)
+      conds.push(`bore ${state.dmin ?? "*"}–${state.dmax ?? "*"} mm`);
+    if (state.Dmin !== null || state.Dmax !== null)
+      conds.push(`O.D. ${state.Dmin ?? "*"}–${state.Dmax ?? "*"} mm`);
+    if (state.Bmin !== null || state.Bmax !== null)
+      conds.push(`width ${state.Bmin ?? "*"}–${state.Bmax ?? "*"} mm`);
+    document.getElementById("cond").textContent = conds.length ? "(" + conds.join(", ") + ")" : "";
+    document.getElementById("sortinfo").textContent =
+      state.sortKey ? `sorted by ${COLS.find(c => c.key === state.sortKey).label} ${state.sortDir === 1 ? "ascending" : "descending"}` : "";
+    renderTable(list);
+  }
+
+
+  // ================= drawing (parametric cross-section) =================
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+  function axialDim(r) {
+    for (const k of ['B', 'T', 'H']) {
+      const v = dimMM(r, k);
+      if (v !== null) return { w: v, label: k };
+    }
+    return { w: null, label: 'B' };
+  }
+  function ln(x1, y1, x2, y2, cls) {
+    return `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" class="${cls}"/>`;
+  }
+  function txt(x, y, t, cls, anchor) {
+    return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" class="${cls}" text-anchor="${anchor || 'middle'}">${esc(t)}</text>`;
+  }
+  function arrowsV(x, yTop, yBot) {
+    const a = 4;
+    return ln(x, yTop, x, yBot, 'dim') +
+      `<path class="tip" d="M${x} ${yTop} l${-a} ${a * 1.8} l${a * 2} 0 z"/>` +
+      `<path class="tip" d="M${x} ${yBot} l${-a} ${-a * 1.8} l${a * 2} 0 z"/>`;
+  }
+  function arrowsH(y, xL, xR) {
+    const a = 4;
+    return ln(xL, y, xR, y, 'dim') +
+      `<path class="tip" d="M${xL} ${y} l${a * 1.8} ${-a} l0 ${a * 2} z"/>` +
+      `<path class="tip" d="M${xR} ${y} l${-a * 1.8} ${-a} l0 ${a * 2} z"/>`;
+  }
+  function fmtDim(mmVal) {
+    if (mmVal === null) return '—';
+    return state.unit === 'mm' ? fmt(mmVal, 2) + ' mm' : fmt(mmVal / 25.4, 4) + ' in';
+  }
+
+  function svgDrawing(r) {
+    const d = dimMM(r, 'd'), D = dimMM(r, 'D');
+    const ax = axialDim(r);
+    if (d === null || D === null) return '<div class="nodraw">No bore / outside diameter data — cross-section cannot be generated</div>';
+    const W = ax.w !== null ? ax.w : (D - d) / 2;
+
+    const Wpx = 640, Hpx = 380, axisY = 300, cx = 295;
+    const s = Math.min(230 / (D / 2), 260 / W);
+    const ri = d / 2 * s, ro = D / 2 * s, bw = W * s;
+    const x0 = cx - bw / 2, x1 = cx + bw / 2;
+    const Y = v => axisY - v;
+    const band = ro - ri;
+    const t = Math.max(3, band * 0.27);           // ring wall thickness
+    const rm = (ri + ro) / 2;                      // rolling-element pitch radius
+    const isThrust = r.type === 'Thrust';
+    let g = '';
+
+    // ---- body ----
+    if (isThrust) {
+      // two washers separated axially, ball between
+      const ww = Math.max(4, bw * 0.3);
+      g += `<rect class="ring" x="${x0}" y="${Y(ro)}" width="${ww}" height="${ro - ri}"/>`;
+      g += `<rect class="ring" x="${x1 - ww}" y="${Y(ro)}" width="${ww}" height="${ro - ri}"/>`;
+      const br = Math.min(band * 0.22, (bw - 2 * ww) * 0.45);
+      g += `<circle class="roller" cx="${cx}" cy="${Y(rm)}" r="${Math.max(3, br)}"/>`;
+    } else {
+      g += `<rect class="ring" x="${x0}" y="${Y(ri + t)}" width="${bw}" height="${t}"/>`;   // inner ring
+      g += `<rect class="ring" x="${x0}" y="${Y(ro)}" width="${bw}" height="${t}"/>`;       // outer ring
+      const gapLo = Y(ri + t), gapHi = Y(ro - t), gh = gapLo - gapHi;
+      if (r.type === 'Cylindrical') {
+        const rw = bw * 0.55, rh = gh * 0.82;
+        g += `<rect class="roller" x="${cx - rw / 2}" y="${Y(rm) - rh / 2}" width="${rw}" height="${rh}" rx="1.5"/>`;
+      } else if (r.type === 'Spherical') {
+        const rw = bw * 0.3, rh = gh * 0.8, off = bw * 0.19;
+        [-1, 1].forEach(k => {
+          g += `<ellipse class="roller" cx="${cx + k * off}" cy="${Y(rm)}" rx="${rw / 2}" ry="${rh / 2}" transform="rotate(${k * 12} ${cx + k * off} ${Y(rm)})"/>`;
+        });
+      } else if (r.type === 'Tapered') {
+        const rw = bw * 0.6, rh = gh * 0.78, yc = Y(rm);
+        const a = rh * 0.32;
+        g += `<path class="roller" d="M${cx - rw / 2} ${yc - rh / 2 + a} L${cx + rw / 2} ${yc - rh / 2} L${cx + rw / 2} ${yc + rh / 2} L${cx - rw / 2} ${yc + rh / 2 - a} z"/>`;
+      } else {
+        const br = Math.min(gh * 0.46, bw * 0.4);
+        g += `<circle class="roller" cx="${cx}" cy="${Y(rm)}" r="${Math.max(3, br)}"/>`;
+        if (r.type === 'Precision') {   // angular-contact line
+          const br2 = Math.max(3, br), yc = Y(rm), ang = 15 * Math.PI / 180;
+          g += `<line class="contact" x1="${cx - br2 * 2.1 * Math.cos(ang)}" y1="${yc + br2 * 2.1 * Math.sin(ang)}" x2="${cx + br2 * 2.1 * Math.cos(ang)}" y2="${yc - br2 * 2.1 * Math.sin(ang)}"/>`;
+        }
+      }
+    }
+
+    // ---- centreline / axis ----
+    g += ln(70, axisY, Wpx - 20, axisY, 'axis');
+    g += txt(Wpx - 24, axisY - 7, 'axis', 'note', 'end');
+
+    // ---- extension lines ----
+    g += ln(x0, Y(ro), 40, Y(ro), 'ext') + ln(x0, Y(ri), 62, Y(ri), 'ext');
+    g += ln(x0, axisY, x0, axisY + 46, 'ext') + ln(x1, axisY, x1, axisY + 46, 'ext');
+
+    // ---- dimensions ----
+    g += arrowsV(30, Y(ro), axisY) + txt(24, Y(ro) + (axisY - Y(ro)) / 2, 'D', 'dimlbl', 'end');
+    g += arrowsV(56, Y(ri), axisY) + txt(50, Y(ri) + (axisY - Y(ri)) / 2, 'd', 'dimlbl', 'end');
+    g += arrowsH(axisY + 38, x0, x1) + txt(cx, axisY + 32, ax.label, 'dimlbl');
+
+    // ---- value table on the right of the drawing ----
+    const rows = [
+      ['Outside dia. D', fmtDim(D)],
+      ['Bore d', fmtDim(d)],
+      [ax.label === 'B' ? 'Width B' : (ax.label === 'T' ? 'Overall width T' : 'Height H'), ax.w === null ? '—' : fmtDim(ax.w)],
+    ];
+    const cW = dimMM(r, 'C');
+    if (cW !== null) rows.push(['Cup width C', fmtDim(cW)]);
+    rows.forEach((row, i) => {
+      const yy = 40 + i * 20;
+      g += txt(Wpx - 150, yy, row[0], 'tblk', 'start') + txt(Wpx - 20, yy, row[1], 'tblv', 'end');
+    });
+
+    return `<svg class="drawing" viewBox="0 0 ${Wpx} ${Hpx}" xmlns="${SVG_NS}">
+      <style>
+        .ring { fill:#dbe6f5; stroke:#2c5fa8; stroke-width:1.4; }
+        .roller { fill:#fff3d6; stroke:#c8811a; stroke-width:1.4; }
+        .contact { stroke:#c8811a; stroke-width:1; stroke-dasharray:4 3; }
+        .axis { stroke:#98a5b8; stroke-width:1; stroke-dasharray:9 3 2 3; }
+        .ext { stroke:#c3cede; stroke-width:.8; }
+        .dim { stroke:#5a6b84; stroke-width:1; }
+        .tip { fill:#5a6b84; }
+        .dimlbl { fill:#33425c; font:600 12px system-ui,sans-serif; }
+        .note { fill:#a3aebd; font:11px system-ui,sans-serif; }
+        .tblk { fill:#7c8899; font:11.5px system-ui,sans-serif; }
+        .tblv { fill:#22304a; font:600 11.5px system-ui,sans-serif; }
+      </style>${g}</svg>`;
+  }
+
+  // ================= detail page =================
+  const GROUPS = [
+    ['Main dimensions', ['d_mm', 'd_inch', 'D_mm', 'D_inch', 'B_mm', 'B_inch', 'T_mm', 'T_inch',
+      'C_mm', 'C_inch', 'H_mm', 'H_inch', 'd1_mm', 'D1_mm', 'D2_mm', 'D3_mm',
+      'E_mm', 'F_mm', 's_mm', 'd1_inch', 'D1_inch']],
+    ['Load ratings & speeds', ['Cr', 'Cor', 'Ca', 'Coa', 'Cr_N', 'Cor_N', 'Ca_N', 'Coa_N',
+      'C1_N', 'C1_lbf', 'C90_N', 'C90_lbf', 'Ca90_N', 'Ca90_lbf', 'C0_N', 'C0_lbf', 'Cur_N',
+      'e', 'Y', 'Y1', 'Y2', 'Y0', 'K', 'G1', 'G2', 'Cg', 'f0', 'alpha_deg',
+      'grease_rpm', 'oil_rpm', 'nG_rpm', 'nB_rpm', 'Factor', 'preload_lb', 'a', 'a_inch', 'a_mm']],
+    ['Weight', ['weight_kg', 'cone_weight_kg', 'cup_weight_kg', 'total_weight_kg']],
+    ['Mounting dimensions (fillets / shoulders)', ['r', 'r_inch', 'r1_inch', 'ra_max', 'rb_max', 'ra_inch', 'rb_inch',
+      'da_min', 'da_max', 'da_inch', 'Da_min', 'Da_max', 'Da_inch',
+      'db_min', 'db_max', 'Db_min', 'Db_max', 'Db_inch', 'Dbmax_inch',
+      'Shaft_inch', 'Housing_inch', 'R_mm', 'r_mm', 'r1_mm', 'r2_mm',
+      'da_mm', 'db_mm', 'dc_mm', 'Da_mm', 'Db_mm', 'Dc_mm',
+      'ra_mm', 'ra1_mm', 'rb_mm', 'Aa_mm', 'Ab_mm', 'Ka_mm', 'Kb_mm']],
+    ['Reference', ['cone', 'cup', 'source', 'trb_type', 'page_dims', 'page_rate', 'page_cone', 'page_cup', 'page_dim_cat']],
+  ];
+  function kvBlock(r, keys) {
+    const items = keys.filter(k => r[k] !== undefined && LBL[k]).map(k => {
+      let v = r[k];
+      if (k.endsWith('_rpm')) v = Number(v).toLocaleString('en-US');
+      return `<div><span class="k">${LBL[k]}</span><span class="v">${esc(v)}</span></div>`;
+    });
+    return items.length ? `<div class="kv">${items.join('')}</div>` : '';
+  }
+  function noteFor(r) {
+    let n = [];
+    if (r.type === 'Cylindrical') n.push('Cylindrical roller entries are catalogue series numbers covering the N / NU / NJ / NUP / NH prefixes of the same size.');
+    if (r.type === 'Tapered' && r.cup) n.push('Tapered roller bearings are cone / cup assemblies; cone and cup weights are listed separately and the total is their sum.');
+    if ((r.brand || 'NSK') === 'FAG') n.push('Data from the FAG / Schaeffler Rolling Bearings catalogue HR 1. Ratings are published in newtons; the table column converts them at 1 N = 0.2248 lbf and the original N values are kept. nG is the limiting speed, nB the reference speed.');
+    if (r.source === 'TRB') n.push('Data from the Timken Tapered Roller Bearing Catalog (2016, 760 pp.): ISO dynamic rating C1, Timken C90 / Ca90, static rating C0 (both N and lbf as printed), geometry factors and assembly weight.');
+    if (r.source === 'E1103') n.push('Data from the NSK metric catalogue CAT. No. E1103. Ratings are printed in newtons (kN for full-complement series); the table column shows the converted lbs value and the original N values are listed above. Weights are catalogue kg values (miniature series printed in grams, converted).');
+    if ((r.brand || 'NSK') === 'Timken') n.push('Data from the Timken Bearing Dimension Catalog, which publishes dimensions and weights only — no load ratings or speeds. Weights are catalogue kg values.');
+    if (r.type === 'Thrust') n.push('Thrust bearing ratings are axial values Ca / Coa; T is the overall height.');
+    if (r.type === 'Precision') n.push('Precision bearings have an angular-contact geometry; the dashed line in the cross-section indicates the contact angle.');
+    n.push('All weights were converted from catalogue pounds to kg; load ratings keep the catalogue lbs values.');
+    if (r.page_dims || r.page_rate) n.push(`Source: catalogue page ${r.page_dims || '?'} (dimension table) / page ${r.page_rate || '?'} (rating table).`);
+    return n.join(' ');
+  }
+  function catalogFig(r) {
+    if ((r.brand || 'NSK') === 'FAG') {
+      const v = (typeof FAG_FIG !== 'undefined') ? (FAG_FIG[r.fig_key] || FAG_FIG[r.page_dims]) : null;
+      return v ? { src: 'figs/' + v.f, page: v.page, fag: true } : null;
+    }
+    if (r.source === 'TRB') {
+      const v = (typeof TRB_FIG !== 'undefined') ? TRB_FIG[r.page_dims] : null;
+      return v ? { src: 'figs/' + v.f, page: v.page, trb: true } : null;
+    }
+    if (r.source === 'E1103') {
+      const v = (typeof E11_FIG !== 'undefined') ? E11_FIG[r.page_dims] : null;
+      return v ? { src: 'figs/' + v.f, page: v.page, e1103: true } : null;
+    }
+    if ((r.brand || 'NSK') === 'Timken') {
+      const t = (typeof TK_FIG !== 'undefined') ? TK_FIG[r.model] : null;
+      return t ? { src: 'figs/' + t.f, label: t.label, brand: 'Timken' } : null;
+    }
+    const map = (typeof PAGE_FIG !== 'undefined') ? PAGE_FIG : {};
+    for (const k of ['page_dims', 'page_rate']) {
+      const v = map[r[k]];
+      if (v) return { src: 'figs/' + v.f, page: v.folio || v.page };
+    }
+    return null;
+  }
+
+  // ================= derived values, spec strip, related products =================
+  function cr(r)  { return num(r.Cr) ?? num(r.Ca); }
+  function cor(r) { return num(r.Cor) ?? num(r.Coa); }
+  function crN(r) { return num(r.Cr_N) ?? num(r.Ca_N) ?? num(r.C1_N); }
+  function corN(r){ return num(r.Cor_N) ?? num(r.Coa_N) ?? num(r.C0_N); }
+  function speedG(r) { return num(r.grease_rpm) ?? num(r.nG_rpm); }
+  function speedO(r) { return num(r.oil_rpm) ?? num(r.nB_rpm); }
+
+  function specStrip(r) {
+    const u = state.unit, dg = u === 'mm' ? 2 : 4;
+    const W = axialDim(r);
+    const cells = [];
+    const push = (k, v, unit) => { if (v !== null && v !== undefined && v !== '') 
+      cells.push(`<div><span class="k">${k}</span><span class="v">${v}${unit ? `<small>${unit}</small>` : ''}</span></div>`); };
+    const dv = u === 'mm' ? dimMM(r, 'd') : dimIN(r, 'd');
+    const Dv = u === 'mm' ? dimMM(r, 'D') : dimIN(r, 'D');
+    const Wv = W.w === null ? null : (u === 'mm' ? W.w : W.w / 25.4);
+    push('Bore d', fmt(dv, dg), u);
+    push('Outside dia. D', fmt(Dv, dg), u);
+    push(W.label === 'B' ? 'Width B' : (W.label === 'T' ? 'Overall width T' : 'Height H'), fmt(Wv, dg), u);
+    const c = cr(r), c0 = cor(r), cN = crN(r), c0N = corN(r);
+    if (cN !== null) push('Dynamic Cr', (cN / 1000).toFixed(cN < 10000 ? 2 : 0), 'kN');
+    else if (c !== null) push('Dynamic Cr', Math.round(c).toLocaleString('en-US'), 'lbs');
+    if (c0N !== null) push('Static C0r', (c0N / 1000).toFixed(c0N < 10000 ? 2 : 0), 'kN');
+    else if (c0 !== null) push('Static C0r', Math.round(c0).toLocaleString('en-US'), 'lbs');
+    const sg = speedG(r), so = speedO(r);
+    if (sg !== null) push('Limiting speed', Math.round(sg).toLocaleString('en-US'), 'rpm');
+    else if (so !== null) push('Speed', Math.round(so).toLocaleString('en-US'), 'rpm');
+    const w = weight(r);
+    if (w !== null) push('Weight', fmt(w, w < 1 ? 3 : 2), 'kg');
+    // derived: load ratio and bore/OD ratio
+    if (cN !== null && c0N !== null && c0N > 0) push('Cr / C0r', (cN / c0N).toFixed(2), '');
+    else if (c !== null && c0 !== null && c0 > 0) push('Cr / C0r', (c / c0).toFixed(2), '');
+    const dm = dimMM(r, 'd'), Dm = dimMM(r, 'D');
+    if (dm && Dm) push('Mean dia. dm', fmt((dm + Dm) / 2, 1), 'mm');
+    return `<div class="spec-strip">${cells.join('')}</div>`;
+  }
+
+  // ---- related-product indexes (built lazily: 13k records) ----
+  let IDX = null;
+  function baseModel(m) {
+    let b = String(m).split('/')[0];
+    const mm = b.match(/^[A-Z]*\d+[A-Z]?/i);
+    return (mm ? mm[0] : b).toUpperCase();
+  }
+  function dimKey(r) {
+    const d = dimMM(r, 'd'), D = dimMM(r, 'D'), W = axialDim(r).w;
+    if (d === null || D === null || W === null) return null;
+    return `${d.toFixed(1)}|${D.toFixed(1)}|${W.toFixed(1)}`;
+  }
+  function buildIndex() {
+    if (IDX) return IDX;
+    IDX = { dim: new Map(), base: new Map(), bore: new Map() };
+    BEARINGS.forEach(r => {
+      const dk = dimKey(r);
+      if (dk) { if (!IDX.dim.has(dk)) IDX.dim.set(dk, []); IDX.dim.get(dk).push(r); }
+      const bk = (r.brand || 'NSK') + '|' + baseModel(r.model);
+      if (!IDX.base.has(bk)) IDX.base.set(bk, []);
+      IDX.base.get(bk).push(r);
+      const d = dimMM(r, 'd');
+      if (d !== null) {
+        const k = (r.brand || 'NSK') + '|' + r.type + '|' + Math.round(d);
+        if (!IDX.bore.has(k)) IDX.bore.set(k, []);
+        IDX.bore.get(k).push(r);
+      }
+    });
+    return IDX;
+  }
+  function relatedSets(r) {
+    const ix = buildIndex(), self = keyOf(r);
+    const dk = dimKey(r);
+    const sameDim = (dk ? (ix.dim.get(dk) || []) : []).filter(x => keyOf(x) !== self);
+    const xBrand = sameDim.filter(x => (x.brand || 'NSK') !== (r.brand || 'NSK'));
+    const variants = (ix.base.get((r.brand || 'NSK') + '|' + baseModel(r.model)) || [])
+      .filter(x => keyOf(x) !== self);
+    const d0 = dimMM(r, 'd');
+    let nearby = [];
+    if (d0 !== null) {
+      for (let k = Math.round(d0) - 12; k <= Math.round(d0) + 12; k++) {
+        nearby = nearby.concat(ix.bore.get((r.brand || 'NSK') + '|' + r.type + '|' + k) || []);
+      }
+      nearby = nearby.filter(x => keyOf(x) !== self && !variants.includes(x))
+        .sort((a, b) => Math.abs(dimMM(a, 'd') - d0) - Math.abs(dimMM(b, 'd') - d0));
+    }
+    return [
+      ['Interchange — same size, other brands', xBrand],
+      ['Same size, same brand', sameDim.filter(x => (x.brand || 'NSK') === (r.brand || 'NSK'))],
+      ['Series variants (different suffix)', variants],
+      ['Nearby bore sizes', nearby],
+    ];
+  }
+  function relRows(list, limit) {
+    const u = state.unit, dg = u === 'mm' ? 2 : 4;
+    return list.slice(0, limit).map(x => {
+      const W = axialDim(x);
+      const cN = crN(x), c = cr(x);
+      const load = cN !== null ? (cN / 1000).toFixed(cN < 10000 ? 1 : 0) + ' kN'
+                 : (c !== null ? Math.round(c).toLocaleString('en-US') + ' lbs' : '—');
+      const w = weight(x);
+      const i = TYPES.findIndex(t => t[0] === x.type);
+      return `<tr>
+        <td><a href="#/${encodeURIComponent(keyOf(x))}">${esc(x.model)}</a></td>
+        <td><span class="brand-badge">${esc(x.brand || 'NSK')}</span></td>
+        <td><span class="type-badge type-${i}">${TYPE_CN[x.type] || x.type}</span></td>
+        <td class="num">${fmtCell(u === 'mm' ? dimMM(x, 'd') : dimIN(x, 'd'), dg)}</td>
+        <td class="num">${fmtCell(u === 'mm' ? dimMM(x, 'D') : dimIN(x, 'D'), dg)}</td>
+        <td class="num">${fmtCell(W.w === null ? null : (u === 'mm' ? W.w : W.w / 25.4), dg)}</td>
+        <td class="num">${load}</td>
+        <td class="num">${w === null ? '—' : fmt(w, w < 1 ? 3 : 2)}</td>
+      </tr>`;
+    }).join('');
+  }
+  function relatedHTML(r) {
+    const sets = relatedSets(r).filter(([, l]) => l.length);
+    if (!sets.length) return '';
+    const u = state.unit === 'mm' ? 'mm' : 'in';
+    const tabs = sets.map(([name, list], i) =>
+      `<span class="rel-tab ${i === 0 ? 'on' : ''}" data-rel="${i}">${name}<span class="n">${list.length}</span></span>`).join('');
+    const bodies = sets.map(([, list], i) =>
+      `<div class="rel-body" data-rel="${i}" style="${i === 0 ? '' : 'display:none'}">
+        <table class="rel"><thead><tr>
+          <th>Designation</th><th>Brand</th><th>Type</th><th class="num">d (${u})</th>
+          <th class="num">D (${u})</th><th class="num">B/T (${u})</th>
+          <th class="num">Dyn. rating</th><th class="num">Weight (kg)</th>
+        </tr></thead><tbody>${relRows(list, 25)}</tbody></table>
+        ${list.length > 25 ? `<div class="rel-empty">Showing the first 25 of ${list.length} matches</div>` : ''}
+      </div>`).join('');
+    return `<div class="card"><h3>Related products &amp; interchanges</h3>
+      <div class="rel-tabs">${tabs}</div>${bodies}</div>`;
+  }
+
+  // ---------- extra detail content ----------
+  const SRC_FULL = {
+    US: ['NSK inch product catalogue', 'Dimensions in inches and millimetres, ratings in lbs.'],
+    E1103: ['NSK CAT. No. E1103 (metric)', 'Ratings in newtons, weights in kg, limiting speeds for grease and oil.'],
+    TRB: ['Timken Tapered Roller Bearing Catalog 2016', 'ISO rating C1, Timken C90 / Ca90, static C0, geometry factors, assembly weight.'],
+    DIM: ['Timken Bearing Dimension Catalog', 'Dimensions and component weights only — no ratings or speeds.'],
+    HR1: ['FAG / Schaeffler Rolling Bearings HR 1', 'Ratings in newtons, fatigue limit load Cur, limiting speed nG and reference speed nB.'],
+  };
+  function dimTable(r) {
+    const rows = [
+      ['d', 'Bore diameter', dimMM(r, 'd')],
+      ['D', 'Outside diameter', dimMM(r, 'D')],
+      ['B', 'Inner-ring / bearing width', dimMM(r, 'B')],
+      ['T', 'Overall assembly width', dimMM(r, 'T')],
+      ['C', 'Cup / outer-ring width', dimMM(r, 'C')],
+      ['H', 'Height', dimMM(r, 'H')],
+      ['r', 'Chamfer (min)', num(r.r_mm) ?? (num(r.r_inch) !== null ? num(r.r_inch) * 25.4 : null)],
+      ['E', 'Roller-set outside dia.', num(r.E_mm)],
+      ['F', 'Roller-set bore dia.', num(r.F_mm)],
+    ].filter(x => x[2] !== null && x[2] !== undefined);
+    if (!rows.length) return '';
+    return `<table class="mini"><thead><tr><th style="width:52px">Symbol</th><th>Dimension</th>
+      <th class="num" style="width:92px">mm</th><th class="num" style="width:92px">inch</th></tr></thead><tbody>` +
+      rows.map(([sym, name, v]) => `<tr><td class="sym"><b>${sym}</b></td><td class="sym">${name}</td>
+        <td class="num">${fmt(v, 3)}</td><td class="num">${fmt(v / 25.4, 4)}</td></tr>`).join('') +
+      '</tbody></table>';
+  }
+  function isRoller(r) { return r.type !== 'Ball' && r.type !== 'Precision'; }
+  function lifeCard(r) {
+    const cN = crN(r) ?? (cr(r) !== null ? cr(r) / 0.2248089431 : null);
+    if (cN === null) return '';
+    const p = isRoller(r) ? '10/3' : '3';
+    const sg = speedG(r) ?? speedO(r);
+    const defN = sg ? Math.min(Math.round(sg / 3 / 100) * 100, 3000) : 1500;
+    const defP = Math.round(cN / 10 / 10) * 10;
+    return `<div class="card"><h3>Bearing life estimate (ISO 281 · L<sub>10</sub>)</h3>
+      <div class="calc">
+        <div class="fld"><label>Equivalent load P (N)</label><input id="calcP" type="number" min="1" value="${defP}"></div>
+        <div class="fld"><label>Speed n (rpm)</label><input id="calcN" type="number" min="1" value="${defN}"></div>
+        <div class="fld" style="flex:0 0 auto"><label>&nbsp;</label>
+          <button class="btn-ghost" id="calcGo" style="padding:7px 15px">Calculate</button></div>
+      </div>
+      <div class="calc-out" id="calcOut"></div>
+      <div class="draw-cap">L<sub>10</sub> = (C / P)<sup>${p}</sup> million revolutions, exponent
+        ${p} for ${isRoller(r) ? 'roller' : 'ball'} bearings; C = ${Math.round(cN).toLocaleString('en-US')} N.
+        Hours = L<sub>10</sub> × 10<sup>6</sup> / (60 n). Basic rating life only — it does not include
+        lubrication, contamination or temperature factors (a<sub>ISO</sub>).</div></div>`;
+  }
+  function runCalc(r) {
+    const cN = crN(r) ?? (cr(r) !== null ? cr(r) / 0.2248089431 : null);
+    const out = document.getElementById('calcOut');
+    if (!out || cN === null) return;
+    const P = parseFloat((document.getElementById('calcP') || {}).value);
+    const n = parseFloat((document.getElementById('calcN') || {}).value);
+    if (!P || P <= 0 || !n || n <= 0) { out.innerHTML = 'Enter a load and a speed above.'; return; }
+    const e = isRoller(r) ? 10 / 3 : 3;
+    const Lmr = Math.pow(cN / P, e);
+    const hours = Lmr * 1e6 / (60 * n);
+    const fmtH = hours >= 1e5 ? (hours / 1e3).toFixed(0) + ' × 10³' : Math.round(hours).toLocaleString('en-US');
+    out.innerHTML = `L<sub>10</sub> = <b>${Lmr < 100 ? Lmr.toFixed(1) : Math.round(Lmr).toLocaleString('en-US')}</b> million revolutions
+      &nbsp;·&nbsp; <b>${fmtH}</b> hours at ${n.toLocaleString('en-US')} rpm
+      &nbsp;·&nbsp; C/P = ${(cN / P).toFixed(2)}`;
+  }
+  function sourceCard(r) {
+    const key = r.source || 'US';
+    const [name, note] = SRC_FULL[key] || [key, ''];
+    const pages = [];
+    if (r.page_dims) pages.push(`p.${r.page_dims} (dimensions)`);
+    if (r.page_rate) pages.push(`p.${r.page_rate} (ratings)`);
+    if (r.page_cone) pages.push(`p.${r.page_cone} (cone)`);
+    if (r.page_cup) pages.push(`p.${r.page_cup} (cup)`);
+    return `<div class="card"><h3>Source &amp; traceability</h3>
+      <div class="kv">
+        <div><span class="k">Brand</span><span class="v">${esc(r.brand || 'NSK')}</span></div>
+        <div><span class="k">Catalogue</span><span class="v">${esc(name)}</span></div>
+        ${pages.length ? `<div><span class="k">Catalogue page</span><span class="v">${pages.join(' · ')}</span></div>` : ''}
+        ${r.trb_type ? `<div><span class="k">Series type</span><span class="v">${esc(r.trb_type)}</span></div>` : ''}
+      </div>
+      <div class="draw-cap">${esc(note)}</div></div>`;
+  }
+  function tagLine(r) {
+    const t = [];
+    const m = String(r.model).toUpperCase();
+    const add = (cond, label) => { if (cond) t.push(label); };
+    add(/2RS|2RSR|DDU|-DD|2HRS|2BRS/.test(m), 'Sealed both sides');
+    add(/(^|[^A-Z])2Z|ZZ|-2Z/.test(m), 'Shielded both sides');
+    add(/K$|K-|K30|-K/.test(m), 'Tapered bore (1:12 / 1:30)');
+    add(/C3/.test(m), 'C3 clearance');
+    add(/TVP|TVH|TVPB|TNG/.test(m), 'Polyamide cage');
+    add(/MB|M1|-M\b|CAME|MPA/.test(m), 'Brass cage');
+    add(/P4S|P4|P5|ABEC/.test(m), 'High precision class');
+    add(/^HC|^S7|^S6/.test(m), m.startsWith('HC') ? 'Hybrid ceramic balls' : 'Stainless steel');
+    add(/XL/.test(m), 'X-life');
+    add(!!r.cup, 'Cone + cup assembly');
+    return t.length ? `<div class="tagline">${t.map(x => `<span>${x}</span>`).join('')}</div>` : '';
+  }
+
+  function renderDetail(r) {
+    const i = TYPES.findIndex(t => t[0] === r.type);
+    let right = '';
+    GROUPS.forEach(([title, keys]) => {
+      const b = kvBlock(r, keys);
+      if (b) right += `<div class="card"><h3>${title}</h3>${b}</div>`;
+    });
+    document.getElementById('detailView').innerHTML = `
+      <nav class="dp-crumb"><a href="#">Catalog</a> › <a href="#" id="crumbType">${TYPE_CN[r.type] || r.type}</a> ›
+        <a href="#" id="crumbBrand">${esc(r.brand || 'NSK')}</a> › <span>${esc(r.model)}</span></nav>
+      <div class="dp-top">
+        <button class="btn-back" id="back">← Back to list</button>
+        <span class="dp-title">${esc(r.model)}</span>
+        <span class="brand-badge">${esc(r.brand || 'NSK')}</span>
+        <span class="type-badge type-${i}">${TYPE_CN[r.type] || r.type}</span>
+        <span class="dp-sub">${esc(r.source === 'E1103' ? 'NSK metric catalogue E1103' : r.source === 'TRB' ? 'Timken TRB Catalog 2016' : r.source === 'HR1' ? 'FAG Schaeffler HR 1' : r.source === 'DIM' ? 'Timken Dimension Catalog' : 'NSK inch catalogue')} · units: ${state.unit === 'mm' ? 'mm' : 'inch'}</span>
+        ${(typeof SLUG !== 'undefined' && SLUG[keyOf(r)]) ? `<a class="btn-back" style="text-decoration:none" href="p/${SLUG[keyOf(r)]}.html">Standalone page (indexable) →</a>` : ''}
+        <a class="btn-send" style="text-decoration:none;padding:7px 16px;font-size:13px"
+           href="#contact?model=${encodeURIComponent(r.model)}">Request a quote</a>
+      </div>
+      ${tagLine(r)}
+      ${specStrip(r)}
+      <div class="dp-cols">
+        <div>
+          ${(() => {
+            const f = catalogFig(r);
+            return f ? `<div class="card"><h3>${f.brand === 'Timken'
+                ? `Original catalogue drawing (Timken · ${f.label})`
+                : (f.fag ? `Original catalogue drawing (FAG Schaeffler HR 1, page ${f.page})`
+                   : (f.e1103 ? `Original catalogue drawing (NSK E1103, page ${f.page})`
+                   : (f.trb ? `Original catalogue drawing (Timken TRB catalog, page ${f.page})`
+                            : `Original catalogue drawing (NSK catalogue, page ${f.page})`)))}</h3>
+              <img class="catfig" src="${f.src}" alt="${esc(r.model)}  catalogue drawing" loading="lazy">
+              <div class="draw-cap">${f.fag
+                ? 'From the FAG / Schaeffler HR 1 catalogue above the corresponding table — open design left, 2RSR sealed right, marking d, D, B, r, d<sub>1</sub>, D<sub>1</sub>/D<sub>2</sub>.'
+                : f.trb
+                ? 'From the Timken Tapered Roller Bearing Catalog above the corresponding table (TYPE TS), marking d, D, T, B, C, a, R, r, d<sub>a</sub>, D<sub>a</sub>.'
+                : f.e1103
+                ? 'From the NSK metric catalogue CAT. No. E1103 above the corresponding table, marking d, D, B/T, r, d<sub>a</sub>, D<sub>a</sub>.'
+                : f.brand === 'Timken'
+                ? 'From the margin diagram of the Timken Bearing Dimension Catalog, marking d, D, B, C, T, R, r. All combinations listed in the bore-size tables are single-row assemblies.'
+                : 'Taken from the top of the corresponding NSK catalogue table page, showing the mounting symbols used by that series (d, D, B/T, r, d<sub>a</sub>, D<sub>a</sub>). All part numbers on that page share this drawing.'}</div></div>` : '';
+          })()}
+          <div class="card">
+            <h3>Scale cross-section (generated from this part's own dimensions)</h3>
+            ${svgDrawing(r)}
+            <div class="draw-cap">Blue = inner / outer ring, yellow = rolling element; d = bore, D = outside diameter, B / T = width or overall width.
+            Drawn to scale from this part's own values, for selection reference only — <b>not a manufacturing or assembly drawing</b>.</div>
+          </div>
+          ${(() => { const t = dimTable(r); return t ? `<div class="card"><h3>Dimension table (mm / inch)</h3>${t}</div>` : ''; })()}
+          <div class="card"><h3>Notes</h3><div class="dp-note">${noteFor(r)}</div></div>
+        </div>
+        <div>${right}${lifeCard(r)}${sourceCard(r)}</div>
+      </div>
+      ${relatedHTML(r)}`;
+    document.getElementById('back').onclick = () => { location.hash = ''; };
+    const ct = document.getElementById('crumbType');
+    if (ct) ct.onclick = (ev) => { ev.preventDefault(); state.type = r.type; state.brand = null; location.hash = ''; render(); };
+    const cb = document.getElementById('crumbBrand');
+    if (cb) cb.onclick = (ev) => { ev.preventDefault(); state.brand = r.brand || 'NSK'; state.type = null; location.hash = ''; render(); };
+    const go = document.getElementById('calcGo');
+    if (go) {
+      go.onclick = () => runCalc(r);
+      ['calcP', 'calcN'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.addEventListener('input', () => runCalc(r));
+      });
+      runCalc(r);
+    }
+    const dv = document.getElementById('detailView');
+    dv.querySelectorAll('.rel-tab').forEach(t => {
+      t.onclick = () => {
+        dv.querySelectorAll('.rel-tab').forEach(x => x.classList.remove('on'));
+        t.classList.add('on');
+        dv.querySelectorAll('.rel-body').forEach(b => {
+          b.style.display = b.dataset.rel === t.dataset.rel ? '' : 'none';
+        });
+      };
+    });
+    document.body.classList.add('detail');
+    window.scrollTo(0, 0);
+  }
+
+  // ---------- router ----------
+  function keyOf(r) { return (r.brand || 'NSK') + '/' + r.type + '/' + r.model; }
+  function openDetail(r) { location.hash = '#/' + encodeURIComponent(keyOf(r)); }
+  function clearPages() {
+    document.body.classList.remove('detail', 'page', 'page-about', 'page-contact');
+    document.querySelectorAll('.topnav a').forEach(a => a.classList.remove('on'));
+  }
+  function showPage(name) {
+    clearPages();
+    document.body.classList.add('page', 'page-' + name);
+    const nav = document.getElementById(name === 'about' ? 'navAbout' : 'navContact');
+    if (nav) nav.classList.add('on');
+    if (name === 'about') fillAboutStats();
+    window.scrollTo(0, 0);
+  }
+  function fillAboutStats() {
+    const box = document.getElementById('aboutStats');
+    if (!box || box.dataset.done) return;
+    const c = {};
+    BEARINGS.forEach(r => { const b = r.brand || 'NSK'; c[b] = (c[b] || 0) + 1; });
+    const figs = new Set();
+    BEARINGS.forEach(r => { const f = catalogFig(r); if (f) figs.add(f.src); });
+    box.innerHTML =
+      `<div><b>${BEARINGS.length.toLocaleString('en-US')}</b><span>part numbers</span></div>` +
+      Object.keys(c).sort().map(k => `<div><b>${c[k].toLocaleString('en-US')}</b><span>${k} parts</span></div>`).join('') +
+      `<div><b>${figs.size}</b><span>catalogue drawings</span></div>`;
+    box.dataset.done = '1';
+  }
+  function route() {
+    const raw = location.hash.replace(/^#\/?/, '');
+    const h = decodeURIComponent(raw);
+    if (h === 'about') { showPage('about'); applyHead(PAGE_HEAD.about); return; }
+    if (h === 'contact' || h.indexOf('contact') === 0) {
+      showPage('contact');
+      applyHead(PAGE_HEAD.contact);
+      const q = h.split('?')[1];
+      if (q) {
+        const m = decodeURIComponent((q.match(/model=([^&]*)/) || [])[1] || '');
+        const f = document.getElementById('f_model');
+        if (m && f && !f.value) f.value = m;
+      }
+      return;
+    }
+    if (!h) { clearPages(); applyHead(DEF_HEAD); return; }
+    const rec = BEARINGS.find(r => keyOf(r) === h) || BEARINGS.find(r => r.model === h);
+    if (rec) { clearPages(); renderDetail(rec); applyHead(headForRecord(rec)); }
+    else { clearPages(); location.hash = ''; applyHead(DEF_HEAD); }
+  }
+
+  // ---------- dynamic <head>: title / description / keywords / OG / JSON-LD ----------
+  const SITE_NAME = 'SIFT BEARING STORE CATALOG';
+  const DEF_HEAD = {
+    title: document.title,
+    desc: (document.querySelector('meta[name=description]') || {}).content || '',
+    kw: (document.querySelector('meta[name=keywords]') || {}).content || '',
+  };
+  function setMeta(sel, attr, val) {
+    let el = document.head.querySelector(sel);
+    if (!el) {
+      el = document.createElement('meta');
+      const m = sel.match(/\[(name|property)=([^\]]+)\]/);
+      if (m) el.setAttribute(m[1], m[2].replace(/['"]/g, ''));
+      document.head.appendChild(el);
+    }
+    el.setAttribute(attr, val);
+  }
+  function setLink(rel, href) {
+    let el = document.head.querySelector(`link[rel="${rel}"]`);
+    if (!el) { el = document.createElement('link'); el.rel = rel; document.head.appendChild(el); }
+    el.href = href;
+  }
+  function setJsonLd(obj) {
+    let el = document.getElementById('ldjson');
+    if (!obj) { if (el) el.remove(); return; }
+    if (!el) {
+      el = document.createElement('script');
+      el.type = 'application/ld+json';
+      el.id = 'ldjson';
+      document.head.appendChild(el);
+    }
+    el.textContent = JSON.stringify(obj);
+  }
+  function applyHead(h) {
+    document.title = h.title;
+    setMeta('meta[name=description]', 'content', h.desc);
+    setMeta('meta[name=keywords]', 'content', h.kw);
+    setMeta('meta[property="og:title"]', 'content', h.title);
+    setMeta('meta[property="og:description"]', 'content', h.desc);
+    setMeta('meta[property="og:url"]', 'content', location.href);
+    if (h.image) setMeta('meta[property="og:image"]', 'content', new URL(h.image, location.href).href);
+    setLink('canonical', location.href);
+    setJsonLd(h.ld || null);
+  }
+  function headForRecord(r) {
+    const brand = r.brand || 'NSK';
+    const tcn = TYPE_CN[r.type] || r.type;
+    const d = dimMM(r, 'd'), D = dimMM(r, 'D'), W = axialDim(r);
+    const dims = [d, D, W.w].filter(v => v !== null && v !== undefined)
+      .map(v => fmt(v, 2)).join('×');
+    const cN = crN(r), c = cr(r), sg = speedG(r), w = weight(r);
+    const parts = [`${r.model} is a ${brand} ${tcn.toLowerCase()} bearing`];
+    if (d && D) parts.push(`bore ${fmt(d, 2)} mm, O.D. ${fmt(D, 2)} mm` +
+      (W.w ? `, ${W.label === 'B' ? 'width' : 'height'} ${fmt(W.w, 2)} mm` : ''));
+    if (cN !== null) parts.push(`dynamic rating ${(cN / 1000).toFixed(cN < 10000 ? 1 : 0)} kN`);
+    else if (c !== null) parts.push(`dynamic rating ${Math.round(c).toLocaleString('en-US')} lbs`);
+    if (sg !== null) parts.push(`limiting speed ${Math.round(sg).toLocaleString('en-US')} rpm`);
+    if (w !== null) parts.push(`weight ${fmt(w, w < 1 ? 3 : 2)} kg`);
+    const desc = parts.join(', ') + '. Full mounting dimensions, the original catalogue drawing and cross-brand interchange options are listed.';
+    const kw = [r.model, r.model + ' bearing', r.model + ' specifications', r.model + ' dimensions',
+      brand + ' ' + r.model, brand + ' ' + tcn, tcn + ' bearing', 'bearing cross reference'];
+    if (d) kw.push(`${fmt(d, 2)} mm bore bearing`);
+    if (d && D) kw.push(`${fmt(d, 2)}x${fmt(D, 2)} bearing`);
+    if (r.cone) kw.push(r.cone, r.cup);
+    const fig = catalogFig(r);
+    const props = [];
+    const pv = (n, v, u) => { if (v !== null && v !== undefined && v !== '')
+      props.push({ '@type': 'PropertyValue', name: n, value: String(v), unitCode: u }); };
+    pv('Bore d', d === null ? null : fmt(d, 2), 'MMT');
+    pv('Outside diameter D', D === null ? null : fmt(D, 2), 'MMT');
+    pv(W.label === 'B' ? 'Width B' : 'Height ' + W.label, W.w === null ? null : fmt(W.w, 2), 'MMT');
+    if (cN !== null) pv('Basic dynamic load rating Cr (N)', cN);
+    if (sg !== null) pv('Limiting speed (rpm)', Math.round(sg));
+    const ld = {
+      '@context': 'https://schema.org', '@type': 'Product',
+      name: `${brand} ${r.model} ${tcn}`, sku: r.model, mpn: r.model,
+      category: tcn, brand: { '@type': 'Brand', name: brand },
+      description: desc, url: location.href, additionalProperty: props,
+    };
+    if (w !== null) ld.weight = { '@type': 'QuantitativeValue', value: w, unitCode: 'KGM' };
+    if (fig) ld.image = new URL(fig.src, location.href).href;
+    return {
+      title: `${r.model} — ${brand} ${tcn} bearing${dims ? ', ' + dims + ' mm' : ''} | ${SITE_NAME}`,
+      desc, kw: kw.join('，'), image: fig ? fig.src : null, ld,
+    };
+  }
+  const PAGE_HEAD = {
+    about: {
+      title: `About Us | ${SITE_NAME}`,
+      desc: 'SIFT Bearing Store supplies imported rolling bearings and selection support. Every record is parsed from the original NSK, Timken and FAG catalogues and keeps its source page number.',
+      kw: 'SIFT bearing store,bearingsfit,about us,imported bearing supplier,bearing selection service',
+    },
+    contact: {
+      title: `Contact / Request a Quote | ${SITE_NAME}`,
+      desc: 'Bearing enquiries and technical support: email richard@bearingsfit.com or WhatsApp +86 156 2149 6516. Send a part-number list for a full quotation.',
+      kw: 'bearing enquiry,bearing quotation,contact,bearingsfit,bearing supplier contact',
+    },
+  };
+
+  // ---------- inquiry form ----------
+  const MAIL_TO = 'richard@bearingsfit.com';
+  function inquiryText() {
+    const g = id => (document.getElementById(id) || {}).value || '';
+    const rows = [
+      ['Name', g('f_name')], ['Company', g('f_comp')], ['Email', g('f_mail')],
+      ['Phone / WhatsApp', g('f_tel')], ['Part numbers', g('f_model')],
+      ['Quantity', g('f_qty')], ['Required delivery', g('f_lead')], ['Notes', g('f_msg')],
+    ].filter(([, v]) => v.trim());
+    return rows.map(([k, v]) => k + '：' + v).join('\n') +
+      '\n\n— Enquiry sent from the SIFT BEARING STORE CATALOG website';
+  }
+  const W3F_KEY = '172fbbeb-f0f8-4e0b-baf0-11e3f92a8eb5';
+  function bindForm() {
+    const send = document.getElementById('btnSend');
+    const copy = document.getElementById('btnCopy');
+    const msg = document.getElementById('formMsg');
+    if (!send) return;
+    const g = id => ((document.getElementById(id) || {}).value || '').trim();
+    const say = (t, ok) => { msg.style.color = ok ? '#2f7a44' : '#c0392b'; msg.textContent = t; };
+
+    send.onclick = async () => {
+      const name = g('f_name'), mail = g('f_mail'), model = g('f_model');
+      if (!name || !mail || !model) { say('Please fill in name, email and the part numbers required', false); return; }
+      const bot = document.getElementById('f_bot');
+      if (bot && bot.checked) return;                       // honeypot
+      const payload = {
+        access_key: W3F_KEY,
+        subject: 'Bearing enquiry: ' + model.slice(0, 60) + ' (' + name + ')',
+        from_name: 'SIFT BEARING STORE CATALOG',
+        replyto: mail,
+        'Name': name,
+        'Company': g('f_comp'),
+        'Email': mail,
+        'Phone/WhatsApp': g('f_tel'),
+        'Part numbers': model,
+        'Quantity': g('f_qty'),
+        'Required delivery': g('f_lead'),
+        'Notes': g('f_msg'),
+        'Submitted from': location.href,
+        'Submitted at': new Date().toLocaleString('en-GB'),
+      };
+      const label = send.textContent;
+      send.disabled = true;
+      send.textContent = 'Sending…';
+      say('Sending, please wait…', true);
+      try {
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify(payload),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!(res.ok && data.success)) throw new Error(data.message || ('HTTP ' + res.status));
+        say('✅ Enquiry sent — we will reply to your email within 24 hours', true);
+        ['f_name', 'f_comp', 'f_mail', 'f_tel', 'f_model', 'f_qty', 'f_lead', 'f_msg']
+          .forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+      } catch (err) {
+        say('Submission failed — your mail client has been opened instead. You can also use “Copy details” and send it via WhatsApp.', false);
+        location.href = 'mailto:' + MAIL_TO +
+          '?subject=' + encodeURIComponent('Bearing enquiry: ' + model.slice(0, 60) + ' (' + name + ')') +
+          '&body=' + encodeURIComponent(inquiryText());
+      } finally {
+        send.disabled = false;
+        send.textContent = label;
+      }
+    };
+
+    copy.onclick = async () => {
+      const txt = inquiryText();
+      try {
+        await navigator.clipboard.writeText(txt);
+        say('Copied — paste it into WhatsApp or an email', true);
+      } catch (e) {
+        window.prompt('Copy the text below:', txt);
+      }
+    };
+  }
+  bindForm();
+  window.addEventListener('hashchange', route);
+  const navHome = document.getElementById('navHome');
+  if (navHome) navHome.onclick = () => { location.hash = ''; };
+
+  // ---------- quick dimension search: 25x52x15 / 25*52 / 25-52-15 ±tol ----------
+  function applyDimQuery(txt) {
+    const box = ["dmin", "dmax", "Dmin", "Dmax", "Bmin", "Bmax"];
+    const hint = document.getElementById("dimhint");
+    const t = String(txt || "").trim();
+    if (!t) {
+      // clearing the quick box also clears the ranges it had filled
+      if (state.dimq) {
+        box.forEach(k => {
+          state[k] = null;
+          const el = document.getElementById(k);
+          if (el) el.value = "";
+        });
+      }
+      state.dimq = "";
+      if (hint) hint.textContent = "";
+      return false;
+    }
+    let tol = 0.6;
+    const tm = t.match(/[±+\-]\s*([\d.]+)\s*$/);
+    let body = t;
+    if (tm) { tol = parseFloat(tm[1]); body = t.slice(0, tm.index); }
+    const nums = body.split(/[x*×, \/]+/i).map(v => parseFloat(v)).filter(v => !isNaN(v) && v > 0);
+    if (!nums.length) {
+      if (hint) hint.textContent = "Not recognised — use a format like 25x52x15";
+      return false;
+    }
+    const set = (k, v) => { state[k] = v; const el = document.getElementById(k); if (el) el.value = v === null ? "" : v; };
+    const names = [["dmin", "dmax"], ["Dmin", "Dmax"], ["Bmin", "Bmax"]];
+    box.forEach(k => set(k, null));
+    nums.slice(0, 3).forEach((v, i) => { set(names[i][0], +(v - tol).toFixed(3)); set(names[i][1], +(v + tol).toFixed(3)); });
+    const lbl = ["bore", "O.D.", "width"];
+    if (hint) hint.textContent = nums.slice(0, 3).map((v, i) => `${lbl[i]} ${v}`).join(" × ") + ` (±${tol} mm)`;
+    state.dimq = t;
+    return true;
+  }
+
+  // ---------- events ----------
+  let timer = null;
+  document.getElementById("q").addEventListener("input", e => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      state.q = e.target.value; state.page = 1; state.openId = -1; render();
+    }, 180);
+  });
+  document.getElementById("dmin").addEventListener("input", e => {
+    const v = parseFloat(e.target.value);
+    state.dmin = isNaN(v) ? null : v; state.page = 1; state.openId = -1; render();
+  });
+  document.getElementById("dmax").addEventListener("input", e => {
+    const v = parseFloat(e.target.value);
+    state.dmax = isNaN(v) ? null : v; state.page = 1; state.openId = -1; render();
+  });
+  ["Dmin", "Dmax", "Bmin", "Bmax"].forEach(id => {
+    document.getElementById(id).addEventListener("input", e => {
+      const v = parseFloat(e.target.value);
+      state[id] = isNaN(v) ? null : v; state.page = 1; state.openId = -1; render();
+    });
+  });
+  let dtimer = null;
+  document.getElementById("dims").addEventListener("input", e => {
+    clearTimeout(dtimer);
+    dtimer = setTimeout(() => {
+      applyDimQuery(e.target.value);
+      state.page = 1; state.openId = -1; render();
+    }, 200);
+  });
+  document.querySelectorAll("#unitSeg button").forEach(b => {
+    b.onclick = () => {
+      document.querySelectorAll("#unitSeg button").forEach(x => x.classList.remove("on"));
+      b.classList.add("on");
+      state.unit = b.dataset.u; state.openId = -1; render();
+    };
+  });
+  document.getElementById("reset").onclick = () => {
+    state.q = ""; state.type = null; state.brand = null; state.dmin = null; state.dmax = null;
+    state.Dmin = null; state.Dmax = null; state.Bmin = null; state.Bmax = null; state.dimq = "";
+    ["Dmin", "Dmax", "Bmin", "Bmax"].forEach(id => { document.getElementById(id).value = ""; });
+    document.getElementById("dims").value = "";
+    document.getElementById("dimhint").textContent = "";
+    state.sortKey = null; state.sortDir = 1; state.page = 1; state.openId = -1;
+    document.getElementById("q").value = "";
+    document.getElementById("dmin").value = "";
+    document.getElementById("dmax").value = "";
+    render();
+  };
+
+  (function () {
+    const t = document.getElementById("hdrtag");
+    if (t) {
+      const c = {};
+      BEARINGS.forEach(r => { const b = r.brand || "NSK"; c[b] = (c[b] || 0) + 1; });
+      const parts = Object.keys(c).sort((a, b) => c[b] - c[a])
+        .map(k => `${k} ${c[k].toLocaleString("en-US")}`);
+      t.textContent = `${BEARINGS.length.toLocaleString("en-US")} part numbers · ${parts.join(" + ")} · parsed from original manufacturer catalogues`;
+    }
+  })();
+  render();
+  route();
+})();
+</script>
+<a class="wa-float" href="https://wa.me/8615621496516" target="_blank" rel="noopener"
+   title="WhatsApp: +86 156 2149 6516" aria-label="Contact us on WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.767.967-.94 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.372-.025-.521-.074-.149-.669-1.611-.916-2.206-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span>WhatsApp</span>
+</a>
+</body>
+</html>

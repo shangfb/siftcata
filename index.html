@@ -7,6 +7,8 @@
 <meta name="description" content="SIFT BEARING STORE CATALOG: 13,000+ bearing part numbers from NSK, Timken and FAG. Search by designation or by dimensions (bore × O.D. × width), find cross-brand interchanges, and get load ratings, limiting speeds, weights and original catalogue drawings.">
 <meta name="keywords" content="bearing catalog,bearing cross reference,bearing interchange,bearing dimensions,bearing specifications,NSK bearing,Timken bearing,FAG bearing,deep groove ball bearing,tapered roller bearing,spherical roller bearing,cylindrical roller bearing,SIFT bearing">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://cata.bearingsift.com/">
+<meta property="og:url" content="https://cata.bearingsift.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SIFT BEARING STORE CATALOG">
 <meta property="og:title" content="SIFT BEARING STORE CATALOG | NSK · Timken · FAG Bearing Specifications">
@@ -1445,9 +1447,10 @@
     setMeta('meta[name=keywords]', 'content', h.kw);
     setMeta('meta[property="og:title"]', 'content', h.title);
     setMeta('meta[property="og:description"]', 'content', h.desc);
-    setMeta('meta[property="og:url"]', 'content', location.href);
+    const pageUrl = h.url || location.href;
+    setMeta('meta[property="og:url"]', 'content', pageUrl);
     if (h.image) setMeta('meta[property="og:image"]', 'content', new URL(h.image, location.href).href);
-    setLink('canonical', location.href);
+    setLink('canonical', pageUrl);
     setJsonLd(h.ld || null);
   }
   function headForRecord(r) {
@@ -1471,6 +1474,9 @@
     if (d && D) kw.push(`${fmt(d, 2)}x${fmt(D, 2)} bearing`);
     if (r.cone) kw.push(r.cone, r.cup);
     const fig = catalogFig(r);
+    // the indexable, standalone page for this part number (no hash, no .html)
+    const _slug = (typeof SLUG !== 'undefined') ? SLUG[keyOf(r)] : null;
+    const pageUrl = _slug ? (location.origin + '/p/' + _slug) : location.href;
     const props = [];
     const pv = (n, v, u) => { if (v !== null && v !== undefined && v !== '')
       props.push({ '@type': 'PropertyValue', name: n, value: String(v), unitCode: u }); };
@@ -1483,13 +1489,13 @@
       '@context': 'https://schema.org', '@type': 'Product',
       name: `${brand} ${r.model} ${tcn}`, sku: r.model, mpn: r.model,
       category: tcn, brand: { '@type': 'Brand', name: brand },
-      description: desc, url: location.href, additionalProperty: props,
+      description: desc, url: pageUrl, additionalProperty: props,
     };
     if (w !== null) ld.weight = { '@type': 'QuantitativeValue', value: w, unitCode: 'KGM' };
     if (fig) ld.image = new URL(fig.src, location.href).href;
     return {
       title: `${r.model} — ${brand} ${tcn} bearing${dims ? ', ' + dims + ' mm' : ''} | ${SITE_NAME}`,
-      desc, kw: kw.join('，'), image: fig ? fig.src : null, ld,
+      desc, kw: kw.join('，'), image: fig ? fig.src : null, ld, url: pageUrl,
     };
   }
   const PAGE_HEAD = {
